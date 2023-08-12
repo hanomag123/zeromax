@@ -3,4 +3,400 @@ layout: default
 title: Главная
 ---
 
-<div class="main"></div>
+<svg style="display: none;">
+
+  <symbol id="mainIcon" viewBox="0 0 593 129">
+    <g>
+      <path d="M0 6C132.339 6 408.625 6 531.192 6C564.882 6 592 33.3106 592 67V67C592 100.689 564.689 128 531 128H507"
+        stroke="#ECECEC" stroke-width="1" stroke-dasharray="8 8" />
+      <circle cx="6" cy="6" r="6" fill="#02AAB2" />
+    </g>
+  </symbol>
+
+  <symbol id="advIcon" viewBox="0 0 257 496">
+    <g>
+      <path d="M1 -2.563e-05V367.5C1 437.916 58.0837 495 128.5 495H148.549C207.892 495 256 446.892 256 387.549V387.549"
+        stroke="#ECECEC" stroke-dasharray="8 8" />
+      <circle cx="188" cy="487" r="6" fill="#02AAB2" />
+    </g>
+  </symbol>
+
+  <symbol id="cityIcon" viewBox="0 0 496 262">
+    <g>
+      <path
+        d="M-2.563e-05 256L367.5 256C437.916 256 495 198.916 495 128.5L495 108.451C495 49.1075 446.892 1 387.549 1V1"
+        stroke="#ECECEC" stroke-dasharray="8 8" />
+      <circle cx="315" cy="256" r="6" transform="rotate(-90 315 256)" fill="#02AAB2" />
+    </g>
+  </symbol>
+
+  <symbol id="buttonIcon" viewBox="0 0 496 219">
+    <g>
+      <path
+        d="M496 -37L128.5 -37C58.0837 -37 0.999998 20.0837 0.999994 90.5L0.999994 110.549C0.999991 169.892 49.1075 218 108.451 218V218"
+        stroke="#ECECEC" stroke-dasharray="8 8" />
+      <circle cx="9" cy="150" r="6" transform="rotate(90 9 150)" fill="#02AAB2" />
+    </g>
+  </symbol>
+
+</svg>
+
+<section class="main container relative">
+
+  <div class="main-top">
+    <h1 class="main-title">
+      <p class="first-part">Best</p>
+      <p class="second-part"><span>movers</span> <span>NYC</span></p>
+      <p class="third-part">Zeromax</p>
+      <svg>
+        <use href='#mainIcon'></use>
+      </svg>
+    </h1>
+
+    <h2 class="main-desc">
+      Fill out the information about your move and we will instantly provideyou with your moving quote as well as
+      estimates for alternative dates.
+    </h2>
+  </div>
+
+  <div class="main-form mt-40">
+    <div class="main-form-top">
+      <h2 class="main-form-title">Get a free moving quote!</h2>
+      <h3 class="main-form-subtitle">We can beat any quote from a licensed mover by 5%-10%</h3>
+    </div>
+
+    <form action="#">
+      <div class="input-wrapper">
+        <input type="text" name="from" class="input w-full" aria-label="street address" required>
+        <div class="input-placeholder">Moving from <span class="text-lgrey">(Street address)</span></div>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" name="to" class="input w-full" aria-label="street address" required>
+        <div class="input-placeholder">Moving to <span class="text-lgrey">(Street address)</span></div>
+      </div>
+      <button type="submit" class="page-button" aria-label="get a quote">Get a quote Now <span class="ball"><svg>
+            <use href='#arrowR'></use>
+          </svg></span></button>
+    </form>
+  </div>
+
+  <picture>
+    <source srcset="./assets/images/main/main-1-sm.jpg" media="(max-width:500px)">
+    <img class="main-bg" src="./assets/images/main/main-1.jpg" alt="main">
+  </picture>
+</section>
+
+<ul class="revs-list container">
+
+  <li>
+    <a href="#">
+      <div class="revs-logo">
+        <img src="./assets/images/revs/1.svg" alt="review">
+      </div>
+
+      <h3 class="revs-title">Google <br>reviews</h3>
+
+      <div class="revs-numbs">
+        <span class="revs-numb">4,8 </span> / 5
+      </div>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <div class="revs-logo">
+        <img src="./assets/images/revs/2.svg" alt="review">
+      </div>
+
+      <h3 class="revs-title">Yelp <br>reviews</h3>
+
+      <div class="revs-numbs">
+        <span class="revs-numb">5 </span> / 5
+      </div>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <div class="revs-logo">
+        <img src="./assets/images/revs/3.svg" alt="review">
+      </div>
+
+      <h3 class="revs-title">Trustpilot <br>reviews</h3>
+
+      <div class="revs-numbs">
+        <span class="revs-numb">4,8 </span> / 5
+      </div>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <div class="revs-logo">
+        <img src="./assets/images/revs/4.svg" alt="review">
+      </div>
+
+      <h3 class="revs-title">Thumblack <br>reviews</h3>
+
+      <div class="revs-numbs">
+        <span class="revs-numb">4,8 </span> / 5
+      </div>
+    </a>
+  </li>
+
+</ul>
+
+<section class="serv container">
+  <a href="#" class="serv-title">Moving <br>services</a>
+
+  <ol class="serv-list">
+
+    @loop("./partials/serv.html", [
+    {"title": "Local moving"},
+    {"title": "Residential"},
+    {"title": "Commercial"},
+    {"title": "Flat fee"},
+    {"title": "Moving boxes"},
+    {"title": "Fine art moving"},
+    {"title": "Storage"},
+    {"title": "Long Distance"},
+    {"title": "Same Day Moving"},
+    ])
+
+  </ol>
+</section>
+
+<section class="adv container">
+  <div class="adv-icon">
+    <svg>
+      <use href='#advIcon'></use>
+    </svg>
+  </div>
+  <h2 class="adv-title page-title">The key advantages of our movers in NYC</h2>
+
+  <ul class="adv-list">
+    <li>When it comes to relocating the items that are most important to you, we are NYC moving company you can rely on.
+      Our NYC movers have the skills and understanding to ensure a smooth and trouble-free relocation.</li>
+    <li>Our NYC moving company offers a range of reliable moving services in New York City plus packing/unpacking and
+      on-site storage solutions for residential, commercial, and long-distance relocations. Below outlined just a few of
+      the reasons why you should entrust our NYC movers with your relocation.</li>
+  </ul>
+
+  <picture>
+    <source srcset="./assets/images/main/main-1-sm.jpg" media="(max-width:500px)">
+    <img class="main-bg" src="./assets/images/main/adv/adv-1.jpg" alt="main">
+  </picture>
+</section>
+
+<section class="adv2">
+  <ul class="adv2-blue container">
+    <li>
+      <h2 class="adv2-title">Personalizing each move</h2>
+      <p class="adv2-desc">Our NYC moving company can customize the relocation process to meet your demands and
+        preferences. Skilled NYC movers can fully pack and unpack your belongings, supply boxes and packing material.
+        NYC movers from our company will do whatever else you need to make a calm and easy move day guaranteed.</p>
+    </li>
+    <li>
+      <h2 class="adv2-title">Happy customers</h2>
+      <p class="adv2-desc">The majority of our customers come to us by recommendation, which indicates that we have a
+        lot of satisfied clients. Check out our website for numerous NYC moving company reviews!</p>
+    </li>
+    <li>
+      <h2 class="adv2-title">Multi-service</h2>
+      <p class="adv2-desc">We are a multi-service moving agency, which means we can manage your move from the very
+        beginning to end. Whether you're relocating a small suburban apartment or a large business office in the city
+        center, you can rely on our moving company NYC to handle every detail of your relocation.</p>
+    </li>
+    <li>
+      <h2 class="adv2-title">Expertise</h2>
+      <p class="adv2-desc">Our management, best NYC movers, and sales staff have years of industry expertise. We can
+        answer any of your questions and make certain that we take all of the required procedures to guarantee that your
+        moving goes as smoothly as possible.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="check container">
+  <h2 class="check-title page-title">
+    Check Our Movers All-Inclusive Rates
+  </h2>
+
+  <div class="check-desc">
+    <p>At Zeromax NYC moving company, we realize how difficult it is to find NYC movers offering cheap yet quality
+      moving solutions that you can rely on. We have a team of professional moving specialists eager to assist and
+      servicing every and all your needs whatever moving type you require.</p>
+    <p>Therefore, we are happy to provide a low-cost alternative that you can trust based on hundreds of positive
+      reviews.</p>
+  </div>
+
+  <div class="white-box"></div>
+
+  <div class="check-bg">
+    <picture>
+      <source srcset="./assets/images/main/main-1-sm.jpg" media="(max-width:500px)">
+      <img src="./assets/images/main/adv2/adv2-bg.png" alt="adv">
+    </picture>
+  </div>
+</section>
+
+<section class="city container">
+  <h2 class="city-title">
+    Take advantage of our All-Inclusive service and your move will be as stress-free as possible
+
+    <div class="line">
+      <svg>
+        <use href='#cityIcon'></use>
+      </svg>
+    </div>
+  </h2>
+
+  <button class="city-button page-button --h-190" aria-label="get a quote">
+    Get a <br> quote Now <span class="ball"><svg>
+        <use href='#arrowR'></use>
+      </svg></span>
+
+    <div class="line">
+      <svg>
+        <use href='#buttonIcon'></use>
+      </svg>
+    </div>
+  </button>
+
+  {{> city}}
+
+</section>
+
+<section class="ab">
+  <div class="ab-head container">
+    <h2 class="ab-title page-title">Clients <span class="text-blue">about cooperation</span> with ZeroMax</h2>
+
+    <div class="ab-container">
+      <button class="page-button --h-190 --white" aria-label="post feedback">Post-Move Feedback<span class="ball"><svg>
+            <use href='#arrowR'></use>
+          </svg></span></button>
+      <a href="#" class="page-button --h-190">All Reviews<span class="ball"><svg>
+            <use href='#arrowR'></use>
+          </svg></span></a>
+    </div>
+  </div>
+
+  <div class="ab-swiper-wrapper">
+    <div class="swiper ab-swiper container">
+      <div class="swiper-wrapper">
+        @for(let i = 0; i < 10; i++) { <div class="swiper-slide" data-name="Gabriella L." data-location="Miami, FL">
+          <div class="ab-content">
+            “ZeroMax was a great company to go with while moving during the coronavirus pandemic. They were gloves and
+            masks throughout the entire move. The 3 movers wrapped each individual piece of furniture securely and
+            ensured it would not be damaged. They even disassembled a few small pieces of furniture for us. They were
+            very thorough and careful when loading and unloading the truck, and put every item in the correct rooms as
+            instructed. I would recommend!”
+          </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="ab-bot container">
+    <div class="swiper-counter">1/10</div>
+    <div class="swiper-navigation">
+      <button class="arrow-button prev" aria-label="previous slide"><svg>
+          <use href='#arrowPrev'></use>
+        </svg></button>
+      <button class="arrow-button next" aria-label="next slide"><svg>
+          <use href='#arrowNext'></use>
+        </svg></button>
+    </div>
+    <div class="swiper-data">
+      <div class="ab-name">Gabriella L.</div>
+      <div class="ab-location">Miami, FL</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="any">
+  <div class="any-top container">
+
+    <h2 class="any-title">
+      <a href="#" class="any-link">About us</a>
+      <span class="text-blue">Zeromax Moving</span> is a moving company in NYC you can hire for any local, regional, or
+      cross-country relocation.
+    </h2>
+
+    <ul class="any-desc-list">
+      <li>
+        If you require a moving service in New York City, you've found the perfect movers to assist you in moving in or
+        out of the city.
+      </li>
+      <li>
+        Whether you live in a high-rise apartment, a suburban townhouse, or a rural estate, entrust your household move
+        to the finest in the business.
+      </li>
+    </ul>
+
+    <picture>
+      <source srcset="./assets/images/main/main-1-sm.jpg" media="(max-width:500px)">
+      <img class="main-bg" src="./assets/images/main/main-2.jpg" alt="main">
+    </picture>
+  </div>
+</section>
+
+
+<ul class="mov container">
+  <li>
+    <button class="mov-button accordion-button" aria-label="toggle accordion">Moving estimate from our professional
+      moving company and factors that
+      affect moving cost<span class="plus"></span></button>
+
+    <div class="accordion-block">
+      <div class="mov-inner accordion-inner">
+        <p>
+          Zeromax Moving will provide you with a high degree of professionalism from start to endpoint. Our skilled
+          movers NYC live here, so they are well-versed in the city's complexities. With New York's congested streets
+          and traffic, this information is critical to keeping your move on schedule. You can be confident that Zeromax
+          movers NYC will arrive on time, no matter where you are relocating. We provide our clients with accurate local
+          relocation online estimates at competitive hourly rates based on our years of company expertise.
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <button class="mov-button accordion-button" aria-label="toggle accordion">Few moving tips from professional
+      movers<span class="plus"></span></button>
+
+    <div class="accordion-block">
+      <div class="mov-inner accordion-inner">
+        <p>
+          Zeromax Moving will provide you with a high degree of professionalism from start to endpoint. Our skilled
+          movers NYC live here, so they are well-versed in the city's complexities. With New York's congested streets
+          and traffic, this information is critical to keeping your move on schedule. You can be confident that Zeromax
+          movers NYC will arrive on time, no matter where you are relocating. We provide our clients with accurate local
+          relocation online estimates at competitive hourly rates based on our years of company expertise.
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<section class="we container">
+  <h2 class="we-title page-title"><span class="text-blue">We are ready</span> for Your Move, are you?</h2>
+
+  <div class="we-container">
+    <div class="we-text">
+      Our partners are companies that have proven themselves in providing eco-friendly packaging products.
+    </div>
+
+    <div class="we-buttons">
+      <button class="page-button --h-190 --white" aria-label="post feedback">Call back Me<span class="ball"><svg>
+            <use href='#arrowR'></use>
+          </svg></span></button>
+      <button class="page-button --h-190" aria-label="get a quote">Get a quote Now<span class="ball"><svg>
+            <use href='#arrowR'></use>
+          </svg></span></button>
+    </div>
+  </div>
+</section>
+
+<section class="med container">
+  <h2 class="med-title page-title">Media <br> About Us</h2>
+</h2>

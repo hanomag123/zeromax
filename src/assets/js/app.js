@@ -44,29 +44,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     disableScroll() {
-        // Get the current page scroll position;
-        const scrollTop = window.pageYOffset  || document.documentElement.scrollTop;
-        const scrollLeft = window.pageXOffset  || document.documentElement.scrollLeft;
-      
-            // if any scroll is attempted, set this to the previous value;
-            window.onscroll = function() {
-                window.scrollTo(scrollLeft, scrollTop);
-            };
+      // Get the current page scroll position;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      // if any scroll is attempted, set this to the previous value;
+      window.onscroll = function () {
+        window.scrollTo(scrollLeft, scrollTop);
+      };
     }
 
     enableScroll() {
-      window.onscroll = function() {};
+      window.onscroll = function () { };
     }
   }
 
-  const menu = document.querySelector('.menu');
-  const menuButton = document.querySelector('.menu-button');
+  const menu = document.getElementById('menu');
+  const menuButton = document.getElementById('menu-button');
 
   if (menu && menuButton) {
     new Menu(menu, menuButton);
   }
 
-  const header = document.querySelector('header');
+  const header = document.getElementById('header');
 
   let handler;
 
@@ -183,6 +183,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return wrapper;
   }
+
+
+  setTimeout(() => {
+    const inputs = document.querySelectorAll('input,textarea');
+    if (inputs.length) {
+      inputs.forEach(el => {
+        el.value ? el.classList.add('havetext') : el.classList.remove('havetext');
+        el.addEventListener('input', function () {
+          this.value ? this.classList.add('havetext') : this.classList.remove('havetext');
+        });
+        el.addEventListener('focus', function () {
+          this.parentElement.classList.remove('error');
+        })
+      });
+    }
+  }, 0)
+
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+
+  if (accordionButtons.length) {
+    accordionButtons.forEach(el => {
+      el.addEventListener('click', function () {
+        this.classList.toggle('active');
+      })
+    })
+  }
+
+  function updSwiperNumericPagination() {
+    const parent = this.el.closest('.swiper').parentElement;
+
+    if (parent) {
+      const swiperCounter = parent.querySelector('.swiper-counter');
+      if (swiperCounter) {
+        swiperCounter.innerHTML = '<span class="count">' + (this.realIndex + 1) + '</span>/<span class="total">' + this.el.slidesQuantity + "</span>";
+      }
+
+      const activeSlide = this.slides[this.activeIndex];
+      const reviewName = parent.querySelector('.ab-name');
+
+      if (reviewName && activeSlide) {
+        const {name} = activeSlide.dataset;
+        if (name) {
+          reviewName.innerHTML = `<span>${name}</span>`;
+        }
+      }
+
+      const locationName = parent.querySelector('.ab-location');
+
+      if (locationName && activeSlide) {
+        const {location} = activeSlide.dataset;
+        if (location) {
+          locationName.innerHTML = `<span>${location}</span>`;
+        }
+      }
+    }
+
+    
+  }
+
+  setTimeout(() => {
+    const swipers = document.querySelectorAll('.ab-swiper-wrapper');
+
+    if (swipers.length) {
+      swipers.forEach(el => {
+        const swiper = el.querySelector('.swiper');
+        swiper.slidesQuantity = swiper.querySelectorAll(".swiper-slide").length;
+        const next = el.querySelector('.next');
+        const prev = el.querySelector('.prev');
+        new Swiper(swiper, {
+          loop: true,
+          slidesPerView: 'auto',
+          autoHeight: true,
+          grabCursor: true,
+          speed: 500,
+          navigation: {
+            nextEl: next,
+            prevEl: prev,
+          },
+          on: {
+            init: updSwiperNumericPagination,
+            slideChange: updSwiperNumericPagination
+          }
+        })
+        
+      })
+    }
+  }, 0)
+
+
+
+
 });
 
 
