@@ -1,11 +1,50 @@
-<header class="header" id="header">
+<header class="header container" id="header">
+
+  <div class="header-nav">
+    <a href="#" class="header-logo">
+      {{> logo}}
+    </a>
+
+    <nav class="header-list">
+      <ul>
+        <li>
+          <a href="#">Services <svg><use href='#headerArrow'></use></svg></a>
+          <ul>
+            <li><a href="#">Local moving</a></li>
+            <li><a href="#">Residential</a></li>
+            <li><a href="#">Commercial </a></li>
+            <li><a href="#">Flat fee</a></li>
+            <li><a href="#">Moving boxes</a></li>
+            <li><a href="#">Fine art moving</a></li>
+            <li><a href="#">Storage</a></li>
+            <li><a href="#">Long Distance</a></li>
+            <li><a href="#">Same Day Moving</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contacts</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
   {{> menu}}
 
-  <button class="menu-button" id="menu-button" aria-label="open menu">
-    <span class="burger-button-close">
-      <span id="first-line-burger"></span>
-      <span id="second-line-burger"></span>
-      <span id="third-line-burger"></span>
-  </span>
-  </button>
+  <div class="header-buttons">
+    <button class="callback-button page-button">
+      Call back me
+      <span class="ball">
+        <svg>
+          <use href='#arrowR'></use>
+        </svg>
+      </span>
+    </button>
+  
+    <button class="menu-button" id="menu-button" aria-label="toggle menu">
+      <span class="menu-button-inner"></span>
+    </button>
+  </div>
 </header>

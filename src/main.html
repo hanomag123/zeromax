@@ -3,58 +3,23 @@ layout: default
 title: Главная
 ---
 
-<svg style="display: none;">
-
-  <symbol id="mainIcon" viewBox="0 0 593 129">
-    <g>
-      <path d="M0 6C132.339 6 408.625 6 531.192 6C564.882 6 592 33.3106 592 67V67C592 100.689 564.689 128 531 128H507"
-        stroke="#ECECEC" stroke-width="1" stroke-dasharray="8 8" />
-      <circle cx="6" cy="6" r="6" fill="#02AAB2" />
-    </g>
-  </symbol>
-
-  <symbol id="advIcon" viewBox="0 0 257 496">
-    <g>
-      <path d="M1 -2.563e-05V367.5C1 437.916 58.0837 495 128.5 495H148.549C207.892 495 256 446.892 256 387.549V387.549"
-        stroke="#ECECEC" stroke-dasharray="8 8" />
-      <circle cx="188" cy="487" r="6" fill="#02AAB2" />
-    </g>
-  </symbol>
-
-  <symbol id="cityIcon" viewBox="0 0 496 262">
-    <g>
-      <path
-        d="M-2.563e-05 256L367.5 256C437.916 256 495 198.916 495 128.5L495 108.451C495 49.1075 446.892 1 387.549 1V1"
-        stroke="#ECECEC" stroke-dasharray="8 8" />
-      <circle cx="315" cy="256" r="6" transform="rotate(-90 315 256)" fill="#02AAB2" />
-    </g>
-  </symbol>
-
-  <symbol id="buttonIcon" viewBox="0 0 496 219">
-    <g>
-      <path
-        d="M496 -37L128.5 -37C58.0837 -37 0.999998 20.0837 0.999994 90.5L0.999994 110.549C0.999991 169.892 49.1075 218 108.451 218V218"
-        stroke="#ECECEC" stroke-dasharray="8 8" />
-      <circle cx="9" cy="150" r="6" transform="rotate(90 9 150)" fill="#02AAB2" />
-    </g>
-  </symbol>
-
-</svg>
+{{> mainsprite}}
 
 <section class="main container relative">
 
   <div class="main-top">
     <h1 class="main-title">
-      <p class="first-part">Best</p>
-      <p class="second-part"><span>movers</span> <span>NYC</span></p>
-      <p class="third-part">Zeromax</p>
-      <svg>
+      <span class="first-part">Best</span>
+      <span class="second-part"><span>movers</span> <span>NYC</span></span>
+      <span class="third-part">ZeroMax</span>
+      <svg class="xl-hidden">
         <use href='#mainIcon'></use>
       </svg>
+      <svg class="xl-block"><use href='#mainIcon-sm'></use></svg>
     </h1>
 
     <h2 class="main-desc">
-      Fill out the information about your move and we will instantly provideyou with your moving quote as well as
+      Fill out the information about your move and we will instantly provide you with your moving quote as well as
       estimates for alternative dates.
     </h2>
   </div>
@@ -65,7 +30,7 @@ title: Главная
       <h3 class="main-form-subtitle">We can beat any quote from a licensed mover by 5%-10%</h3>
     </div>
 
-    <form action="#">
+    <form action="#" class="bg-white">
       <div class="input-wrapper">
         <input type="text" name="from" class="input w-full" aria-label="street address" required>
         <div class="input-placeholder">Moving from <span class="text-lgrey">(Street address)</span></div>
@@ -86,68 +51,70 @@ title: Главная
   </picture>
 </section>
 
-<ul class="revs-list container">
+<div class="swiper revs-swiper container">
+  <ul class="revs-list swiper-wrapper">
+  
+    <li class="swiper-slide">
+      <a href="#">
+        <div class="revs-logo">
+          <img src="./assets/images/revs/1.svg" alt="review">
+        </div>
+  
+        <h3 class="revs-title">Google <br>reviews</h3>
+  
+        <div class="revs-numbs">
+          <span class="revs-numb">4,8</span> / 5
+        </div>
+      </a>
+    </li>
+  
+    <li class="swiper-slide">
+      <a href="#">
+        <div class="revs-logo">
+          <img src="./assets/images/revs/2.svg" alt="review">
+        </div>
+  
+        <h3 class="revs-title">Yelp <br>reviews</h3>
+  
+        <div class="revs-numbs">
+          <span class="revs-numb">5</span> / 5
+        </div>
+      </a>
+    </li>
+  
+    <li class="swiper-slide">
+      <a href="#">
+        <div class="revs-logo">
+          <img src="./assets/images/revs/3.svg" alt="review">
+        </div>
+  
+        <h3 class="revs-title">Trustpilot <br>reviews</h3>
+  
+        <div class="revs-numbs">
+          <span class="revs-numb">4,8</span> / 5
+        </div>
+      </a>
+    </li>
+  
+    <li class="swiper-slide">
+      <a href="#">
+        <div class="revs-logo">
+          <img src="./assets/images/revs/4.svg" alt="review">
+        </div>
+  
+        <h3 class="revs-title">Thumblack <br>reviews</h3>
+  
+        <div class="revs-numbs">
+          <span class="revs-numb">4,8</span> / 5
+        </div>
+      </a>
+    </li>
+  
+  </ul>
+</div>
 
-  <li>
-    <a href="#">
-      <div class="revs-logo">
-        <img src="./assets/images/revs/1.svg" alt="review">
-      </div>
-
-      <h3 class="revs-title">Google <br>reviews</h3>
-
-      <div class="revs-numbs">
-        <span class="revs-numb">4,8 </span> / 5
-      </div>
-    </a>
-  </li>
-
-  <li>
-    <a href="#">
-      <div class="revs-logo">
-        <img src="./assets/images/revs/2.svg" alt="review">
-      </div>
-
-      <h3 class="revs-title">Yelp <br>reviews</h3>
-
-      <div class="revs-numbs">
-        <span class="revs-numb">5 </span> / 5
-      </div>
-    </a>
-  </li>
-
-  <li>
-    <a href="#">
-      <div class="revs-logo">
-        <img src="./assets/images/revs/3.svg" alt="review">
-      </div>
-
-      <h3 class="revs-title">Trustpilot <br>reviews</h3>
-
-      <div class="revs-numbs">
-        <span class="revs-numb">4,8 </span> / 5
-      </div>
-    </a>
-  </li>
-
-  <li>
-    <a href="#">
-      <div class="revs-logo">
-        <img src="./assets/images/revs/4.svg" alt="review">
-      </div>
-
-      <h3 class="revs-title">Thumblack <br>reviews</h3>
-
-      <div class="revs-numbs">
-        <span class="revs-numb">4,8 </span> / 5
-      </div>
-    </a>
-  </li>
-
-</ul>
-
-<section class="serv container">
-  <a href="#" class="serv-title">Moving <br>services</a>
+<div class="serv container">
+  <a href="#" class="serv-title">Moving <br class="xl-hidden">services</a>
 
   <ol class="serv-list">
 
@@ -164,90 +131,96 @@ title: Главная
     ])
 
   </ol>
-</section>
+</div>
 
-<section class="adv container">
-  <div class="adv-icon">
-    <svg>
-      <use href='#advIcon'></use>
-    </svg>
-  </div>
-  <h2 class="adv-title page-title">The key advantages of our movers in NYC</h2>
+<div class="overflow-hidden">
 
-  <ul class="adv-list">
-    <li>When it comes to relocating the items that are most important to you, we are NYC moving company you can rely on.
-      Our NYC movers have the skills and understanding to ensure a smooth and trouble-free relocation.</li>
-    <li>Our NYC moving company offers a range of reliable moving services in New York City plus packing/unpacking and
-      on-site storage solutions for residential, commercial, and long-distance relocations. Below outlined just a few of
-      the reasons why you should entrust our NYC movers with your relocation.</li>
-  </ul>
-
-  <picture>
-    <source srcset="./assets/images/main/main-1-sm.jpg" media="(max-width:500px)">
-    <img class="main-bg" src="./assets/images/main/adv/adv-1.jpg" alt="main">
-  </picture>
-</section>
-
-<section class="adv2">
-  <ul class="adv2-blue container">
-    <li>
-      <h2 class="adv2-title">Personalizing each move</h2>
-      <p class="adv2-desc">Our NYC moving company can customize the relocation process to meet your demands and
-        preferences. Skilled NYC movers can fully pack and unpack your belongings, supply boxes and packing material.
-        NYC movers from our company will do whatever else you need to make a calm and easy move day guaranteed.</p>
-    </li>
-    <li>
-      <h2 class="adv2-title">Happy customers</h2>
-      <p class="adv2-desc">The majority of our customers come to us by recommendation, which indicates that we have a
-        lot of satisfied clients. Check out our website for numerous NYC moving company reviews!</p>
-    </li>
-    <li>
-      <h2 class="adv2-title">Multi-service</h2>
-      <p class="adv2-desc">We are a multi-service moving agency, which means we can manage your move from the very
-        beginning to end. Whether you're relocating a small suburban apartment or a large business office in the city
-        center, you can rely on our moving company NYC to handle every detail of your relocation.</p>
-    </li>
-    <li>
-      <h2 class="adv2-title">Expertise</h2>
-      <p class="adv2-desc">Our management, best NYC movers, and sales staff have years of industry expertise. We can
-        answer any of your questions and make certain that we take all of the required procedures to guarantee that your
-        moving goes as smoothly as possible.</p>
-    </li>
-  </ul>
-</section>
-
-<section class="check container">
-  <h2 class="check-title page-title">
-    Check Our Movers All-Inclusive Rates
-  </h2>
-
-  <div class="check-desc">
-    <p>At Zeromax NYC moving company, we realize how difficult it is to find NYC movers offering cheap yet quality
-      moving solutions that you can rely on. We have a team of professional moving specialists eager to assist and
-      servicing every and all your needs whatever moving type you require.</p>
-    <p>Therefore, we are happy to provide a low-cost alternative that you can trust based on hundreds of positive
-      reviews.</p>
-  </div>
-
-  <div class="white-box"></div>
-
-  <div class="check-bg">
+  <section class="adv container">
+    <div class="adv-icon">
+      <svg>
+        <use href='#advIcon'></use>
+      </svg>
+    </div>
+    <h2 class="adv-title h2">The key advantages of our movers in NYC</h2>
+  
+    <ul class="adv-list">
+      <li>When it comes to relocating the items that are most important to you, we are NYC moving company you can rely on.
+        Our NYC movers have the skills and understanding to ensure a smooth and trouble-free relocation.</li>
+      <li>Our NYC moving company offers a range of reliable moving services in New York City, along with packing/<wbr>unpacking
+        and on-site storage solutions for residential, commercial, and long-distance relocations. Below, we've outlined
+        just a few of the reasons why you should entrust our NYC movers with your relocation.</li>
+    </ul>
+  
     <picture>
-      <source srcset="./assets/images/main/main-1-sm.jpg" media="(max-width:500px)">
-      <img src="./assets/images/main/adv2/adv2-bg.png" alt="adv">
+      <source srcset="./assets/images/main/adv/adv-1-sm.jpg" media="(max-width:500px)">
+      <img class="main-bg" src="./assets/images/main/adv/adv-1.jpg" alt="main">
     </picture>
-  </div>
-</section>
+  </section>
+  
+  <section class="adv2">
+    <ul class="adv2-blue container">
+      <li>
+        <h2 class="adv2-title">Personalizing each move</h2>
+        <p class="adv2-desc">Our NYC moving company can customize the relocation process to meet your demands and
+          preferences. Our skilled NYC movers can fully pack and unpack your belongings, and provide boxes and packing
+          materials. The NYC movers from our company will take care of everything necessary to ensure a calm and easy
+          moving day.</p>
+      </li>
+      <li>
+        <h2 class="adv2-title">Happy customers</h2>
+        <p class="adv2-desc">The majority of our customers come to us through recommendations, which is a testament to the
+          satisfaction of our clients. Feel free to check out our website for numerous reviews about our NYC moving
+          company!</p>
+      </li>
+      <li>
+        <h2 class="adv2-title">Multi-service</h2>
+        <p class="adv2-desc">We are a multi-service moving agency, which means we can manage your move from the very
+          beginning to end. Whether you're relocating a small suburban apartment or a large business office in the city
+          center, you can rely on our moving company NYC to handle every detail of your relocation.</p>
+      </li>
+      <li>
+        <h2 class="adv2-title">Expertise</h2>
+        <p class="adv2-desc">Our management, the best NYC movers, and our sales staff have years of industry expertise. We
+          are here to address any questions you may have and ensure that all necessary procedures are followed to
+          guarantee a smooth moving experience.</p>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="check container">
+    <h2 class="check-title h2">
+      Check Our Movers All-Inclusive Rates
+    </h2>
+  
+    <div class="check-desc">
+      <p>At Zeromax NYC moving company, we realize how difficult it is to find NYC movers offering cheap yet quality
+        moving solutions that you can rely on. We have a team of professional moving specialists eager to assist and
+        servicing every and all your needs whatever moving type you require.</p>
+      <p>Therefore, we are happy to provide a low-cost alternative that you can trust based on hundreds of positive
+        reviews.</p>
+    </div>
+  
+    <div class="white-box"></div>
+  
+    <div class="check-bg">
+      <picture>
+        <source srcset="./assets/images/main/adv2/adv2-bg-sm.png" media="(max-width:500px)">
+        <img src="./assets/images/main/adv2/adv2-bg.png" alt="adv">
+      </picture>
+    </div>
+  </section>
+  
+</div>
 
 <section class="city container">
   <h2 class="city-title">
     Take advantage of our All-Inclusive service and your move will be as stress-free as possible
 
-    <div class="line">
-      <svg>
+    <span class="line">
+      <svg class="xl-hidden">
         <use href='#cityIcon'></use>
       </svg>
-    </div>
+    </span>
   </h2>
 
   <button class="city-button page-button --h-190" aria-label="get a quote">
@@ -255,26 +228,32 @@ title: Главная
         <use href='#arrowR'></use>
       </svg></span>
 
-    <div class="line">
-      <svg>
+    <span class="line">
+      <svg class="xl-hidden">
         <use href='#buttonIcon'></use>
       </svg>
-    </div>
+      <svg class="xl-block">
+        <use href='#cityIcon-sm'></use>
+      </svg>
+    </span>
   </button>
 
-  {{> city}}
+  <div class="city-bg">
+    {{> city2}}
+  </div>
+  
 
 </section>
 
 <section class="ab">
   <div class="ab-head container">
-    <h2 class="ab-title page-title">Clients <span class="text-blue">about cooperation</span> with ZeroMax</h2>
+    <h2 class="ab-title h2">Clients <span class="text-blue">about cooperation</span> with ZeroMax</h2>
 
     <div class="ab-container">
-      <button class="page-button --h-190 --white" aria-label="post feedback">Post-Move Feedback<span class="ball"><svg>
+      <button class="page-button ab-button --white" aria-label="post feedback">Post-Move Feedback<span class="ball"><svg>
             <use href='#arrowR'></use>
           </svg></span></button>
-      <a href="#" class="page-button --h-190">All Reviews<span class="ball"><svg>
+      <a href="#" class="page-button ab-button">All Reviews<span class="ball"><svg>
             <use href='#arrowR'></use>
           </svg></span></a>
     </div>
@@ -334,7 +313,7 @@ title: Главная
     </ul>
 
     <picture>
-      <source srcset="./assets/images/main/main-1-sm.jpg" media="(max-width:500px)">
+      <source srcset="./assets/images/main/main-2-sm.jpg" media="(max-width:500px)">
       <img class="main-bg" src="./assets/images/main/main-2.jpg" alt="main">
     </picture>
   </div>
@@ -379,7 +358,15 @@ title: Главная
 </ul>
 
 <section class="we container">
-  <h2 class="we-title page-title"><span class="text-blue">We are ready</span> for Your Move, are you?</h2>
+  <h2 class="we-title h2">
+    <span class="text-blue">We are ready</span> for Your Move, are you?
+
+    <span class="we-icon">
+      <svg>
+        <use href='#weIcon'></use>
+      </svg>
+    </span>
+  </h2>
 
   <div class="we-container">
     <div class="we-text">
@@ -398,5 +385,100 @@ title: Главная
 </section>
 
 <section class="med container">
-  <h2 class="med-title page-title">Media <br> About Us</h2>
-</h2>
+  <h2 class="med-title h2">Media <br class="xl-hidden"> About Us</h2>
+
+  <ul class="med-list">
+
+    @for(let i=1; i < 5; i++) {
+      <li>
+        <a href="#" class="img-contain">
+          <img src="./assets/images/main/med/med-`+i+`.svg" alt="media">
+        </a>
+      </li>
+    }
+    
+  </ul>
+</section>
+
+<section class="pr">
+  <div class="pr-head container">
+    <h2 class="pr-title h2">Press-center</h2>
+
+    <a href="#" class="pr-button page-button --white">All posts <span class="ball"><svg>
+      <use href='#arrowR'></use>
+    </svg></span></a>
+  </div>
+
+  <div class="swiper pr-swiper container">
+    <ul class="pr-list swiper-wrapper">
+      <li class="pr-item swiper-slide">
+        <a href="#">
+          <h3 class="pr-subtitle">Moving estimate from our professional moving <span class="xl-hidden">company and factors</span> that affect moving cost</h3>
+  
+          <div class="pr-date">
+            <div class="pr-day">
+              07
+            </div>
+            <div class="pr-year">
+              Apr <br>
+              2023
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="pr-item swiper-slide">
+        <a href="#">
+          <h3 class="pr-subtitle">Moving estimate from our professional moving</h3>
+  
+          <div class="pr-date">
+            <div class="pr-day">
+              31
+            </div>
+            <div class="pr-year">
+              Apr <br>
+              2023
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="pr-item swiper-slide">
+        <a href="#">
+          <h3 class="pr-subtitle">Moving estimate from our professional moving that affect moving cost</h3>
+  
+          <div class="pr-date">
+            <div class="pr-day">
+              26
+            </div>
+            <div class="pr-year">
+              Apr <br>
+              2023
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container xl-block">
+    <a href="#" class="pr-button-mobile">All posts <span class="ball"><svg>
+      <use href='#arrowR'></use>
+    </svg></span></a>
+  </div>
+
+  <div class="pr-bot container">
+    <h3 class="pr-btitle"><span class="text-blue">Subscribe</span> to don't miss our news and events</h3>
+
+    <form action="#">
+      <div class="input-wrapper">
+        <input type="text" name="from" class="input w-full" aria-label="street address" required>
+        <div class="input-placeholder">Your Email</div>
+      </div>
+      <button type="submit" class="page-button pr-submit" aria-label="Subscribe">Subscribe <span class="ball"><svg>
+            <use href='#arrowR'></use>
+          </svg></span></button>
+    </form>
+  </div>
+</section>
+
+<div class="last-margin"></div>
+

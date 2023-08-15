@@ -1,14 +1,18 @@
 .menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 1;
-  transform: translateX(100%);
+  transform: translate3d(0, -100%, 0);
   height: 100%;
-  width: 30%;
-  background-color: lightblue;
-  transition: all 1s ease;
-  display: none;
+  width: 100%;
+  transition: transform 0.3s;
+  will-change: transform;
+  background-color: var(--dblue);
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  max-height: 100%;
+  overflow: auto;
   @include breakpoint($xl-bp) {
     display: block;
     height: 100vh;
@@ -19,92 +23,229 @@
   transform: translateX(0);
 }
 
-// .menu-button {
-//   width: 30px;
-//   height: 30px;
-
-//   background-color: red;
-
-//   position: absolute;
-
-//   right: 0;
-//   top: 0;
-
-//   z-index: 3;
-// }
-
 .menu-button {
-  width: 4rem;
-  height: 3.4rem;
-  background-color: transparent;
-  border: 0;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.8rem;
+  background-color: var(--blue);
+  border: 0.1rem solid var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .3s, border-color .3s;
+}
 
-  z-index: 4;
-  display: none;
+.menu-close {
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--white);
+    transition: stroke .3s;
+    &:hover {
+      stroke: var(--blue);
+    }
+  }
+}
+
+.menu-button-inner {
+  width: 1.6rem;
+  height: 0.6rem;
   position: relative;
-  .burger-button-close {
-    #first-line-burger,
-    #second-line-burger,
-    #third-line-burger {
-        width: 100%;
-        height: 0.2rem;
-        border-radius: 0.1rem;
-        background-color: black;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        transform-origin: center center;
-        transition: transform 0.4s ease, opacity 0.4s ease;
-    }
+  &::after,
+  &::before {
+    content: '';
+    width: 100%;
+    height: 0.15rem;
+    background-color: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.2rem;
+    transition: all .3s;
+  }
 
-    #first-line-burger {
-        top: 0%;
-    }
-    #third-line-burger {
-        top: unset;
-        bottom: 0%;
-    }
-  }
-  @include breakpoint($xl-bp) {
-    display: block;
-    margin-left: 3rem;
-  }
-  @include breakpoint($sm-bp) {
-    margin-left: 0;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 0.5rem;
+  &::after {
+    top: 0.6rem;
   }
 }
 
-.header__menu-button--active,
-.menu-button--active {
-  .burger-button-close {
-    #first-line-burger {
-      top: 50%;
-      transform: translateX(-50%) rotate(45deg);
-    }
-    #second-line-burger {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    #third-line-burger {
-      top: 50%;
-      bottom: 0;
-      transform: translateX(-50%) rotate(-45deg);
-    }
-  }
-}
-
-
-.menu-button--active {
-
-}
 
 .overlay {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+.menu-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-nav {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.menu-item {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 7.4rem;
+  padding-right: 7.4rem;
+  a {
+    color: var(--white);
+  }
+}
+
+.marquee {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 44.7rem;
+  z-index: -1;
+  width: 100%;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 6000ms linear infinite;
+  animation-delay: 0ms;
+
+  font-size: 18rem;
+  font-weight: 500;
+  line-height: 22.3rem;
+
+  color: #073739;
+
+  will-change: transform;
+}
+
+.marquee2 span {
+  animation-delay: 3000ms;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+.menu-bot {
+  margin-top: 6.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.menu-logo {
+  width: 15.1rem;
+  height: 5.9rem;
+  display: block;
+
+  grid-column: 2 span;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.menu-location {
+  color: var(--white);
+
+  margin-top: 4rem;
+}
+
+.menu-city {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3rem;
+
+  color: var(--white);
+}
+
+.menu-address {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  margin-top: 1.5rem;
+}
+
+.menu-contacts {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  a {
+    color: var(--blue);
+    transition: color .3s;
+    &:hover {
+      color: var(--white);
+    }
+  }
+}
+
+.menu-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  margin-top: 2.6rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 3rem;
+  }
+  a {
+    width: 6.4rem;
+    height: 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    border: 0.1rem solid var(--blue);
+    transition: border-color .3s;
+    @include breakpoint($xl-bp) {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 1rem;
+    }
+    &:hover {
+      border-color: var(--purple);
+      svg {
+        fill: var(--purple);
+      }
+    }
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+      fill: var(--blue);
+      transition: fill .3s;
+      @include breakpoint($xl-bp) {
+        width: 2.3rem;
+        height: 2.3rem;
+      }
+    }
+  }
 }

@@ -61,9 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const menu = document.getElementById('menu');
   const menuButton = document.getElementById('menu-button');
+  const menuClose = document.getElementById('menuClose');
 
   if (menu && menuButton) {
     new Menu(menu, menuButton);
+    if (menuClose) {
+      menuClose.addEventListener('click', () => {
+        menuButton.click()
+      })
+    }
   }
 
   const header = document.getElementById('header');
@@ -223,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const reviewName = parent.querySelector('.ab-name');
 
       if (reviewName && activeSlide) {
-        const {name} = activeSlide.dataset;
+        const { name } = activeSlide.dataset;
         if (name) {
           reviewName.innerHTML = `<span>${name}</span>`;
         }
@@ -232,14 +238,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const locationName = parent.querySelector('.ab-location');
 
       if (locationName && activeSlide) {
-        const {location} = activeSlide.dataset;
+        const { location } = activeSlide.dataset;
         if (location) {
           locationName.innerHTML = `<span>${location}</span>`;
         }
       }
     }
 
-    
+
   }
 
   setTimeout(() => {
@@ -266,13 +272,80 @@ document.addEventListener("DOMContentLoaded", () => {
             slideChange: updSwiperNumericPagination
           }
         })
-        
+
+      })
+    }
+
+    const prSwipers = document.querySelectorAll('.pr-swiper');
+
+    if (prSwipers.length) {
+      prSwipers.forEach(el => {
+        let init = false;
+        let swiperPr = null;
+        function swiperCard() {
+          if (xl.matches) {
+            if (!init) {
+              init = true;
+              swiperPr = new Swiper(el, {
+                slidesPerView: "auto",
+              });
+            }
+          } else if (init) {
+            swiperPr.destroy();
+            init = false;
+          }
+        }
+        swiperCard();
+        window.addEventListener("resize", swiperCard);
+      })
+    }
+
+    const revSwipers = document.querySelectorAll('.revs-swiper');
+
+    if (revSwipers.length) {
+      revSwipers.forEach(el => {
+        let init = false;
+        let swiperPr = null;
+        function swiperCard() {
+          if (xl.matches) {
+            if (!init) {
+              init = true;
+              swiperPr = new Swiper(el, {
+                slidesPerView: "auto",
+                freeMode: true,
+              });
+            }
+          } else if (init) {
+            swiperPr.destroy();
+            init = false;
+          }
+        }
+        swiperCard();
+        window.addEventListener("resize", swiperCard);
       })
     }
   }, 0)
 
 
+  const nowYear = document.getElementById('nowYear');
 
+  if (nowYear) {
+    const date = new Date().getFullYear();
+    nowYear.innerHTML = date;
+  }
+
+  const servButtons = document.querySelectorAll('.serv-button');
+
+  if (servButtons.length) {
+    servButtons.forEach(el => {
+      el.addEventListener('pointerenter', function () {
+        this.parentElement.classList.add('hover');
+      })
+      el.addEventListener('pointerleave', function () {
+        this.parentElement.classList.remove('hover');
+      })
+    })
+  } 
 
 });
 
