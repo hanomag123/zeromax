@@ -1,0 +1,48 @@
+.movingTips {
+  background-color: var(--dblue);
+
+  padding-top: 10rem;
+  padding-bottom: 7.7rem;
+  overflow: hidden;
+  position: relative;
+  @include breakpoint($xl-bp) {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.movingTips-tabs {
+  display: flex;
+  gap: 10.7rem;
+  flex-wrap: wrap;
+  font-size: 10rem;
+  font-weight: 400;
+  line-height: 12.4rem;
+  
+  @include breakpoint($xl-bp) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  a {
+    color: var(--white);
+    opacity: 0.2;
+    transition: opacity .3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.movingTips-bg {
+  height: 70rem;
+  width: 74.9rem;
+  margin-left: auto;
+  margin-right: 6rem;
+  @include breakpoint($xl-bp) {
+    width: 22.1rem;
+    height: 22.1rem;
+    margin-right: 0;
+  }
+}

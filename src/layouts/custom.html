@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    {{> sprite }}
+
+    <div class="page custom-header">
+        
+        <!-- Header -->
+
+        {{> header }}
+
+        <!-- Main content -->
+        <main>
+
+            {{> body }}
+
+        </main>
+
+        <!-- Footer -->
+        {{> footer }}
+
+    </div>
+
+    <!-- Get quote -->
+    {{> getQuote}}
+
+    <!-- Callback -->
+    {{> callback}}
+
+    <!-- JS -->
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

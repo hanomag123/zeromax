@@ -2,7 +2,7 @@
   padding-top: 6rem;
   padding-bottom: 5.2rem;
 
-  background-color: #F0F0F4;
+  background-color: var(--footer);
   @include breakpoint($xl-bp) {
     padding-top: 3rem;
     padding-bottom: 2rem;

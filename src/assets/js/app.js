@@ -553,6 +553,71 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
+  setTimeout(() => {
+
+    if (!xl.matches) {
+      const menuList = document.querySelectorAll(".marquee");
+      menuList.forEach(baner => {
+        const reverse = baner.getAttribute("data-reverse");
+        const container = baner.querySelector(".marquee-container")
+        const list = baner.querySelector(".marquee-list");
+        const fragment = document.createDocumentFragment();
+        [...list.children].forEach(i => fragment.appendChild(i.cloneNode(true)));
+        list.appendChild(fragment);
+    
+        const clone = list.cloneNode(true);
+        container.appendChild(clone);
+    
+        const tl = gsap.timeline({
+          repeat: -1,
+        });
+    
+        tl.to(list, {
+          x: reverse !== null ? "100%" : "-100%",
+          ease: "none",
+          duration: list.children.length * 5,
+        }, "sin")
+        tl.to(clone, {
+          x: reverse !== null ? "100%" : "-100%",
+          ease: "none",
+          duration: list.children.length * 5,
+        }, "sin");
+    
+      })
+    }
+    
+  const banerList = document.querySelectorAll(".baner");
+  banerList.forEach(baner => {
+    const reverse = baner.getAttribute("data-reverse");
+    const container = baner.querySelector(".baner__container")
+    const list = baner.querySelector(".baner__list");
+    const fragment = document.createDocumentFragment();
+    [...list.children].forEach(i => fragment.appendChild(i.cloneNode(true)));
+    list.appendChild(fragment);
+
+    const clone = list.cloneNode(true);
+    container.appendChild(clone);
+
+    const tl = gsap.timeline({
+      repeat: -1,
+    });
+
+    tl.to(list, {
+      x: reverse !== null ? "100%" : "-100%",
+      ease: "none",
+      duration: list.children.length * 10,
+    }, "sin")
+    tl.to(clone, {
+      x: reverse !== null ? "100%" : "-100%",
+      ease: "none",
+      duration: list.children.length * 10,
+    }, "sin");
+
+  })
+
+
+  }, 0)
+
 });
 
 

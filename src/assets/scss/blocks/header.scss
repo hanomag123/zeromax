@@ -1,3 +1,42 @@
+.custom-header {
+  .first-part-logo {
+    fill: var(--purple);
+  }
+
+  .header-list {
+    & > ul {
+      a {
+        color: var(--black);
+        &:hover {
+          text-decoration-color: var(--black);
+        }
+        svg {
+          stroke: var(--black);
+        }
+      }
+    }
+  }
+
+  .callback-button {
+    border-color: var(--blue);
+    color: var(--blue);
+    .ball {
+      background-color: var(--blue);
+      svg {
+        stroke: var(--white);
+      }
+    }
+    &:hover {
+      background-color: transparent;
+      .ball {
+        svg {
+          stroke: var(--white);
+        }
+      }
+    }
+  }
+}
+
 .header {
   position: fixed;
   width: 100%;
