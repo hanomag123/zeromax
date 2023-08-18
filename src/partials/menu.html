@@ -1,4 +1,4 @@
-<div class="menu container" id="menu">
+<div class="menu" id="menu">
   <button class="menu-close" id="menuClose"><svg><use href='#closeIcon'></use></svg></button>
 
   <div class="marquee">
@@ -8,56 +8,104 @@
     <span>ZeroMax Moving</span>
   </div>
 
-  <div class="menu-inner">
-    <nav class="menu-nav">
-      <ul>
-        <li class="menu-item"><a href="#">Services</a></li>
-        <li class="menu-item"><a href="#">About</a></li>
-        <li class="menu-item"><a href="#">Moving tips</a></li>
-        <li class="menu-item"><a href="#">Press-center</a></li>
-        <li class="menu-item"><a href="#">Contacts</a></li>
-        <li class="menu-item"><a href="#">Referral program</a></li>
-      </ul>
-    </nav>
+  <div class="menu-inner-container container">
+    <div class="menu-inner">
+      <nav class="menu-nav">
+        <ul>
+          <li class="menu-item">
+            <a href="#" class="menu-item-button">Services</a>
+            <div class="menu-sublist">
+              <ul>
+                <li><a href="#" class="desctop-hidden">All</a></li>
+                <li><a href="#">Local moving</a></li>
+                <li><a href="#">Residential</a></li>
+                <li><a href="#">Commercial </a></li>
+                <li><a href="#">Flat fee</a></li>
+                <li><a href="#">Moving boxes</a></li>
+                <li><a href="#">Fine art moving</a></li>
+                <li><a href="#">Storage</a></li>
+                <li><a href="#">Long Distance</a></li>
+                <li><a href="#">Same Day Moving</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu-item"><a href="#">About</a></li>
+          <li class="menu-item">
+            <a href="#" class="menu-item-button">Moving tips</a>
+            <div class="menu-sublist">
+              <ul>
+                <li><a href="#" class="desctop-hidden">All</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Reviews</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu-item"><a href="#">Press-center</a></li>
+          <li class="menu-item"><a href="#">Contacts</a></li>
+          <li class="menu-item"><a href="#">Referral program</a></li>
+        </ul>
+      </nav>
+  
+      <div class="menu-desctop" id="menu-desctop">
+        
+      </div>
+    </div>
   </div>
 
-  <div class="menu-bot">
-    <a href="#" class="menu-logo">
-      <img src="./assets/images/logo/logo-menu.svg" alt="logo">
-    </a>
+  <div class="menu-bot-wrapper container">
+    <div class="menu-bot">
+      <a href="#" class="menu-logo">
+        <img src="./assets/images/logo/logo-menu.svg" alt="logo">
+      </a>
+  
+      <div class="menu-location">
+        <div class="menu-city">New York Area</div>
+        <ul class="menu-address">
+          <li>183 King Street, Brooklyn NY 11231, USA</li>
+          <li>
+            Mo - Fr: 7 am - 9 pm <br>
+            Sa - Su: 7:30 am - 8:30 pm
+          </li>
+        </ul>
+      </div>
+  
+      <div class="menu-wrapper">
+        <ul class="menu-contacts custom-hover">
+          <li><a href="tel:9292057758">(929) 205-7758</a></li>
+          <li><a href="mailto:sales@zeromaxmoving.com">sales@zeromaxmoving.com</a></li>
+        </ul>
+    
+        <ul class="menu-socials custom-hover">
+          <li>
+            <a href="#">
+              <svg><use href='#instagramIcon'></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg><use href='#facebookIcon'></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg><use href='#twitterIcon'></use></svg>
+            </a>
+          </li>
+        </ul>
+  
+      </div>
 
-    <div class="menu-location">
-      <div class="menu-city">New York Area</div>
-      <ul class="menu-address">
-        <li>183 King Street, Brooklyn NY 11231, USA</li>
-        <li>
-          Mo - Fr: 7 am - 9 pm <br>
-          Sa - Su: 7:30 am - 8:30 pm
-        </li>
-      </ul>
+      <div class="menu-line">
+        <svg><use href='#menuLineIcon'></use></svg>
+      </div>
+  
     </div>
-
-    <ul class="menu-contacts">
-      <li><a href="tel:9292057758">(929) 205-77-58</a></li>
-      <li><a href="mailto:sales@zeromaxmoving.com">sales@zeromaxmoving.com</a></li>
-    </ul>
-
-    <ul class="menu-socials">
-      <li>
-        <a href="#">
-          <svg><use href='#instagramIcon'></use></svg>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <svg><use href='#facebookIcon'></use></svg>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <svg><use href='#twitterIcon'></use></svg>
-        </a>
-      </li>
-    </ul>
+    
+    <button class="menu-get-quote page-button" data-modal="#getQuote">
+      Get a quote <br class="xl-hidden">Now
+      <span class="ball"><svg>
+        <use href='#arrowR'></use>
+      </svg></span>
+    </button>
   </div>
 </div>

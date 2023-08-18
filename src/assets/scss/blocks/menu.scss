@@ -6,16 +6,18 @@
   transform: translate3d(0, -100%, 0);
   height: 100%;
   width: 100%;
-  transition: transform 0.3s;
+  transition: transform 0.6s;
   will-change: transform;
   background-color: var(--dblue);
   padding-top: 10rem;
-  padding-bottom: 5rem;
   max-height: 100%;
   overflow: auto;
+  padding-left: 0;
+
   @include breakpoint($xl-bp) {
     display: block;
     height: 100vh;
+    padding-top: 7rem;
   }
 }
 
@@ -33,6 +35,14 @@
   align-items: center;
   justify-content: center;
   transition: background-color .3s, border-color .3s;
+  &:hover {
+    background-color: var(--lblue);
+    border-color: var(--lblue);
+  }
+  @include breakpoint($xl-bp) {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
 .menu-close {
@@ -41,13 +51,20 @@
   position: absolute;
   top: 3rem;
   right: 3rem;
+  @include breakpoint($xl-bp) {
+    width: 3rem;
+    height: 3rem;
+    right: 1.1rem;
+    top: 2rem;
+  }
   svg {
     width: 100%;
     height: 100%;
     stroke: var(--white);
-    transition: stroke .3s;
+    transition: opacity .3s;
+
     &:hover {
-      stroke: var(--blue);
+      opacity: 0.4;
     }
   }
 }
@@ -56,6 +73,7 @@
   width: 1.6rem;
   height: 0.6rem;
   position: relative;
+
   &::after,
   &::before {
     content: '';
@@ -82,17 +100,33 @@
   height: 100%;
 }
 
+.menu-inner-container {
+  padding-bottom: 6.6rem;
+  @include breakpoint($xl-bp) {
+    overflow: hidden;
+  }
+}
+
 .menu-inner {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .menu-nav {
-  ul {
+  width: 100%;
+  max-width: 69rem;
+
+  &>ul {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    & > li {
+      padding-bottom: 2rem;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
   }
 }
 
@@ -101,8 +135,101 @@
   font-weight: 400;
   line-height: 7.4rem;
   padding-right: 7.4rem;
+  position: relative;
+  @include breakpoint($xl-bp) {
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 4rem;
+    padding-right: 0;
+    transition: transform .3s;
+    will-change: transform;
+  }
   a {
     color: var(--white);
+    transition: opacity .3s;
+    display: block;
+    width: 100%;
+  }
+
+  .desctop-hidden {
+    display: none;
+    @include breakpoint($xl-bp) {
+      display: block;
+    }
+  }
+
+  &.not-active {
+    & > a {
+      opacity: 0.4;
+    }
+  }
+  &.hover {
+    @include breakpoint($xl-bp) {
+      & ~ .menu-item {
+        transform: translate3d(22.5rem, 0, 0);
+      }
+    }
+    & > a {
+      opacity: 1;
+    }
+    
+
+    .menu-sublist {
+      display: block;
+    }
+  }
+}
+
+.menu-sublist {
+  display: none;
+  width: 27.9rem;
+  padding-top: 3.4rem;
+  padding-left: 2rem;
+  animation: fadeEffect .3s;
+  will-change: opacity;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  @include breakpoint($xl-bp) {
+    left: 0;
+    padding-left: 0;
+    padding-top: 6rem;
+    width: 20.9rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 3.6rem;
+    @include breakpoint($xl-bp) {
+      font-size: 1.4rem;
+      line-height: 3rem;
+    }
+    li {
+      &.not-active {
+        & > a {
+          opacity: 0.4;
+        }
+      }
+      &.hover {
+        & > a {
+          opacity: 1;
+        }
+    
+        .menu-sublist {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 100%;
+        }
+      }
+    }
+    a {
+      color: var(--white);
+      will-change: opacity;
+    }
   }
 }
 
@@ -115,6 +242,9 @@
   top: 44.7rem;
   z-index: -1;
   width: 100%;
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
 }
 
 .marquee span {
@@ -140,15 +270,56 @@
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(-100%, 0);
   }
 }
 
+.menu-bot-wrapper {
+  padding-left: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  @include breakpoint($xl-bp) {
+    flex-direction: column;
+    padding-left: 2rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding-left: 1.1rem;
+  }
+}
+
 .menu-bot {
-  margin-top: 6.6rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 45.3rem max-content;
+  gap: 2rem;
+  row-gap: 4rem;
+  justify-content: flex-end;
+  padding-bottom: 5rem;
+
+  position: relative;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+  }
+  .menu-line {
+    position: absolute;
+    top: -20rem;
+    right: 1rem;
+    width: 32.6rem;
+    height: 26.1rem;
+    @include breakpoint($xl-bp) {
+      display: none;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: transparent;
+    }
+  }
 }
 
 .menu-logo {
@@ -157,6 +328,11 @@
   display: block;
 
   grid-column: 2 span;
+  @include breakpoint($xl-bp) {
+    grid-column: 1 span;
+    width: 11.2rem;
+    height: 4.4rem;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -166,8 +342,10 @@
 
 .menu-location {
   color: var(--white);
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
 
-  margin-top: 4rem;
 }
 
 .menu-city {
@@ -198,12 +376,15 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  margin-top: 0.5rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    gap: 1rem;
+  }
   a {
     color: var(--blue);
-    transition: color .3s;
-    &:hover {
-      color: var(--white);
-    }
   }
 }
 
@@ -212,36 +393,33 @@
   flex-wrap: wrap;
   gap: 1rem;
 
-  margin-top: 2.6rem;
+  margin-top: 2rem;
+
   @include breakpoint($xl-bp) {
     margin-top: 3rem;
   }
+
   a {
-    width: 6.4rem;
-    height: 6.4rem;
+    width: 5rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     border: 0.1rem solid var(--blue);
-    transition: border-color .3s;
+
     @include breakpoint($xl-bp) {
       width: 5rem;
       height: 5rem;
       border-radius: 1rem;
     }
-    &:hover {
-      border-color: var(--purple);
-      svg {
-        fill: var(--purple);
-      }
-    }
 
     svg {
-      width: 3rem;
-      height: 3rem;
+      width: 2.33rem;
+      height: 2.33rem;
       fill: var(--blue);
       transition: fill .3s;
+
       @include breakpoint($xl-bp) {
         width: 2.3rem;
         height: 2.3rem;
@@ -249,3 +427,58 @@
     }
   }
 }
+
+.menu-get-quote {
+  width: 45.3rem;
+
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 5rem;
+  gap: 2.7rem;
+  border-radius: 0;
+  border-top-right-radius: 2rem;
+
+  margin-top: auto;
+
+  padding: 2rem 3rem 3rem 4rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    gap: 0.4rem;
+  }
+  @include breakpoint($sm-bp) {
+    width: 100%;
+
+  }
+  .ball {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 3rem;
+
+    background-color: transparent;
+    border: 0.1rem solid var(--white);
+    @include breakpoint($xl-bp) {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 100%;
+      background-color: var(--white);
+    }
+    svg {
+      width: 4rem;
+      height: 4rem;
+      stroke: var(--white);
+      @include breakpoint($xl-bp) {
+        stroke: var(--blue);
+      }
+    }
+  }
+}
+

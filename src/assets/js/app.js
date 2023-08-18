@@ -3,9 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const xl = matchMedia('(max-width: 1024px)');
 
   class Menu {
-    constructor(menuElement, buttonElement) {
+    constructor(menuElement, buttonElement, buttons) {
       this.menu = typeof menuElement === "string" ? document.querySelector(menuElement) : menuElement;
       this.button = typeof buttonElement === "string" ? document.querySelector(buttonElement) : buttonElement;
+      this.buttons = buttons;
       this.overlay = document.createElement('div');
       this.overlay.hidden = true;
       this._init();
@@ -17,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       this.overlay.addEventListener('click', this.toggleMenu.bind(this));
       this.button.addEventListener('click', this.toggleMenu.bind(this));
+      if (this.buttons.length) {
+        this.buttons.forEach(el => {
+          el.addEventListener('click', this.closeMenu.bind(this));
+        })
+      }
     }
 
     toggleMenu() {
@@ -32,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     closeMenu() {
-      this.menu.classList.remove('header__nav--active');
-      this.button.classList.remove('header__menu-button--active');
+      this.menu.classList.remove('menu--open');
+      this.button.classList.remove('menu-button--active');
       this.overlay.hidden = true;
 
       this.enableScroll();
@@ -62,9 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById('menu');
   const menuButton = document.getElementById('menu-button');
   const menuClose = document.getElementById('menuClose');
+  const menuButtons = document.querySelectorAll('.menu-get-quote')
 
   if (menu && menuButton) {
-    new Menu(menu, menuButton);
+    new Menu(menu, menuButton, menuButtons);
     if (menuClose) {
       menuClose.addEventListener('click', () => {
         menuButton.click()
@@ -89,23 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.removeEventListener('scroll', handler, false);
   }
 
-  if (xl.matches) {
-    scrollAdd();
-    document.removeEventListener('scroll', scrollHeader);
-  } else {
-    document.addEventListener('scroll', scrollHeader);
-    scrollRemove();
-  }
-
-  xl.addEventListener('change', () => {
-    if (xl.matches) {
-      document.removeEventListener('scroll', scrollHeader);
-      scrollAdd();
-    } else {
-      document.addEventListener('scroll', scrollHeader);
-      scrollRemove();
-    }
-  });
+  document.addEventListener('scroll', scrollHeader);
 
   function disableScroll() {
     // Get the current page scroll position;
@@ -334,18 +325,233 @@ document.addEventListener("DOMContentLoaded", () => {
     nowYear.innerHTML = date;
   }
 
-  const servButtons = document.querySelectorAll('.serv-button');
-
-  if (servButtons.length) {
-    servButtons.forEach(el => {
-      el.addEventListener('pointerenter', function () {
-        this.parentElement.classList.add('hover');
-      })
-      el.addEventListener('pointerleave', function () {
-        this.parentElement.classList.remove('hover');
-      })
+  function customHover(arr = []) {
+    arr.forEach(query => {
+      let elems = null;
+      if (typeof query === 'string') {
+        elems = document.querySelectorAll(query);
+      } else {
+        elems = query
+      }
+      if (elems.length) {
+        elems.forEach(el => {
+          el.addEventListener('pointerenter', function () {
+            elems.forEach(btn => {
+              btn.classList.add('not-active');
+              this.classList.remove('hover');
+            })
+            this.classList.add('hover');
+          })
+          el.addEventListener('pointerleave', function () {
+            elems.forEach(btn => {
+              btn.classList.remove('not-active');
+              this.classList.remove('hover');
+            })
+            this.classList.remove('hover');
+          })
+        })
+      }
     })
-  } 
+  }
+
+  function scopedHover(arr = []) {
+    if (arr.length) {
+      arr.forEach(el => {
+        if (el.length) {
+          el.forEach(list => {
+            customHover([list.querySelectorAll('li')])
+          })
+        }
+      })
+    }
+  }
+
+  setTimeout(() => {
+    customHover([
+      '.serv-list > li',
+      '.mov > li',
+      '.footer-socials.custom-hover > li',
+      '.footer-contacts.custom-hover > li',
+      '.menu-contacts.custom-hover > li',
+      '.menu-socials.custom-hover > li',
+      '.header-sublist.custom-hover > li',
+    ])
+
+    scopedHover([
+      document.querySelectorAll('.footer-item .custom-hover'),
+    ])
+  }, 0);
+
+  setTimeout(() => {
+
+    const menuButtons = document.querySelectorAll('.menu-item');
+
+    function clickHandler() {
+      if (!event.target.closest('.menu-item')) {
+          menuButtons.forEach(b => {
+            b.classList.remove('not-active');
+            b.classList.remove('hover')
+          })
+          document.removeEventListener('click', clickHandler)
+      }
+    }
+
+    if (menuButtons.length) {
+      menuButtons.forEach(el => {
+        el.addEventListener('pointerenter', function () {
+            if (!xl.matches) {
+              menuButtons.forEach(btn => {
+                btn.classList.add('not-active')
+              })
+              this.classList.add('hover');
+            }
+        })
+      })
+      menuButtons.forEach(el => {
+        el.addEventListener('pointerleave', function () {
+          if (!xl.matches) {
+            menuButtons.forEach(btn => {
+              btn.classList.remove('not-active')
+            })
+              this.classList.remove('hover');
+          }
+
+        })
+      })
+    }
+
+    function clickHandlerMenu() {
+      const btn = this.querySelector('.menu-item-button');
+      const isSublist = event.target.closest('.menu-sublist')
+      if (btn && !isSublist) {
+        event.preventDefault();
+      }
+
+      if (this.classList.contains('hover')) {
+        menuButtons.forEach(b => {
+          b.classList.remove('not-active');
+          b.classList.remove('hover')
+        })
+        return;
+      }
+
+        menuButtons.forEach(btn => {
+          btn.classList.add('not-active');
+          btn.classList.remove('hover');
+          if (this.classList.contains('hover')) {
+            btn.classList.remove('hover');
+          }
+        })
+
+        this.classList.add('hover');
+        document.addEventListener('click', clickHandler)
+    }
+
+    if (xl.matches) {
+      menuButtons.forEach(el => {
+        el.addEventListener('click', clickHandlerMenu)
+      })
+    } else {
+      menuButtons.forEach(el => {
+        el.removeEventListener('click', clickHandlerMenu)
+      })
+    }
+
+    xl.addEventListener('change', () => {
+      if (xl.matches) {
+        menuButtons.forEach(el => {
+          el.addEventListener('click', clickHandlerMenu)
+        })
+      } else {
+        menuButtons.forEach(el => {
+          el.removeEventListener('click', clickHandlerMenu)
+        })
+      }
+    })
+
+    const menuButtons2 = document.querySelectorAll('.menu-sublist li');
+
+    if (menuButtons2.length) {
+      menuButtons2.forEach(el => {
+        el.addEventListener('pointerenter', function () {
+            menuButtons2.forEach(btn => {
+              btn.classList.add('not-active')
+            })
+            this.classList.add('hover');
+        })
+      })
+      menuButtons2.forEach(el => {
+        el.addEventListener('pointerleave', function () {
+          menuButtons2.forEach(btn => {
+            btn.classList.remove('not-active')
+          })
+            this.classList.remove('hover');
+
+        })
+      })
+    }
+  }, 0)
+
+  
+  function modalHandler() {
+    const modal = document.querySelector(`${this.dataset?.modal}`) || this
+    if (modal.classList.contains('regModal') && modal.hidden) {
+      disableScroll();
+    } else {
+      enableScroll();
+    }
+    if (modal) {
+      if (modal.hidden) {
+        modal.hidden = !modal.hidden
+        modal.style.setProperty('pointer-events', 'auto');
+        setTimeout(() => {
+          modal.style.opacity = 1
+        }, 10);
+      } else {
+        modal.style.opacity = 0
+        modal.style.setProperty('pointer-events', null);
+        const numb = Number(getComputedStyle(modal).transitionDuration.match(/(\d+\.\d+)|(\d+)/g)[0]);
+        if (numb > 0) {
+          modal.addEventListener('transitionend', hideaftertransition);
+        } else {
+          modal.hidden = true
+        }
+      }
+    }
+  }
+
+  const regModal = document.querySelectorAll('.regModal');
+
+  if (regModal) {
+    regModal.forEach(el => {
+      el.addEventListener('click', function () {
+        if (event.target.classList.contains('regModal')) {
+          modalHandler.apply(this);
+        }
+      });
+      const closeButton = el.querySelectorAll('.close-button');
+      if (closeButton.length) {
+        closeButton.forEach(button => {
+          button.addEventListener('click', () => {
+            modalHandler.apply(el);
+          });
+        })
+      }
+    });
+  }
+
+
+  function hideaftertransition() {
+    this.hidden = true
+    this.removeEventListener('transitionend', hideaftertransition);
+  }
+
+  document.addEventListener('click', () => {
+    const dataModal = event.target.closest('[data-modal]');
+    if (dataModal) {
+      modalHandler.apply(dataModal);
+    }
+  })
 
 });
 

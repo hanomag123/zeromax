@@ -1,0 +1,225 @@
+.regModal {
+  transition: opacity .3s;
+  will-change: opacity;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.close-button-style {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 6rem;
+  height: 6rem;
+  border: 0;
+  background-color: var(--white);
+  padding: 0;
+  &:hover {
+    svg {
+      stroke: var(--blue);
+    }
+  }
+  @include breakpoint($xl-bp) {
+    top: 2rem;
+    right: 4rem;
+    width: 4rem;
+    height: 4rem;
+  }
+  @include breakpoint($sm-bp) {
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2;
+    stroke: var(--black);
+    @include breakpoint($sm-bp) {
+      stroke-width: 1;
+    }
+  }
+}
+
+.modal-overlay {
+  background: rgba(26, 29, 30, 0.4);
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-desc {
+  margin-top: 2rem;
+}
+
+.modal-block {
+  padding: 6rem 11.8rem 8rem;
+  max-width: 140rem;
+  position: relative;
+  max-height: 100%;
+  overflow: auto;
+  background-color: var(--white);
+  border-radius: 4rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1.04fr;
+  gap: 4rem;
+  @include breakpoint($xl-bp) {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    border-radius: 2rem;
+  }
+}
+
+.modal-form {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    @include breakpoint($sm-bp) {
+      gap: 1rem;
+    }
+  }
+}
+
+.route-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  @include breakpoint($sm-bp) {
+    gap: 1rem;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4rem;
+    left: -2.6rem;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='2' height='102' viewBox='0 0 2 102' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L1 101' stroke='%23C3C6C9' stroke-linecap='square' stroke-dasharray='8 8'/%3E%3C/svg%3E%0A");
+
+    width: 0.1rem;
+    height: calc(100% - 8rem);
+    @include breakpoint($xl-bp) {
+      content: unset;
+    }
+  }
+  & > * {
+
+    &::before {
+      content: '';
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='6' cy='6' r='6' transform='rotate(-90 6 6)' fill='%2302AAB2'/%3E%3C/svg%3E%0A");
+      background-size: cover;
+      width: 1.2rem;
+      height: 1.2rem;
+      top: 50%;
+      left: -3.2rem;
+      position: absolute;
+      z-index: 1;
+      transform: translateY(-50%);
+      @include breakpoint($xl-bp) {
+        content: unset;
+      }
+    }
+  }
+}
+
+.modal-title {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 7.4rem;
+  @include breakpoint($xl-bp) {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+    padding-left: 0.5rem;
+    padding-right: 2.5rem;
+
+  }
+}
+
+.modal-form-subtitle {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+  max-width: 48.4rem;
+  margin-top: 2.5rem;
+  @include breakpoint($xl-bp) {
+    padding-bottom: 0;
+    margin-top: 0;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+}
+
+.modal-wrapper {
+  display: grid;
+  grid-template-columns: 21.7rem 33.5rem;
+  justify-content: space-between;
+  gap: 2rem;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  @include breakpoint($sm-bp) {
+    gap: 1rem;
+  }
+}
+
+.modal-terms {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+
+  color: var(--lgrey);
+  a {
+    color: var(--blue);
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    transition: text-decoration-color .3s;
+    &:hover {
+      text-decoration-color: transparent;
+    }
+  }
+}
+
+.modal-button {
+  min-height: 12rem;
+  padding: 1.5rem;
+  padding-left: 2rem;
+  font-size: 2.4rem;
+  line-height: 2.97rem;
+  @include breakpoint($xl-bp) {
+    min-height: 7rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    padding: 1rem;
+    padding-left: 2rem;
+  }
+  .ball {
+    width: 3rem;
+    height: 3rem;
+    @include breakpoint($xl-bp) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+

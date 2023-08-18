@@ -104,24 +104,16 @@
     justify-content: center;
     border-radius: 2rem;
     border: 0.1rem solid var(--blue);
-    transition: border-color .3s;
     @include breakpoint($xl-bp) {
       width: 5rem;
       height: 5rem;
       border-radius: 1rem;
-    }
-    &:hover {
-      border-color: var(--purple);
-      svg {
-        fill: var(--purple);
-      }
     }
 
     svg {
       width: 3rem;
       height: 3rem;
       fill: var(--blue);
-      transition: fill .3s;
       @include breakpoint($xl-bp) {
         width: 2.3rem;
         height: 2.3rem;
@@ -155,9 +147,6 @@
       font-size: 1.8rem;
       line-height: 2.2rem;
     }
-    &:hover {
-      color: var(--purple);
-    }
   }
 }
 
@@ -188,10 +177,6 @@
   }
   a {
     color: var(--black);
-    transition: color .3s;
-    &:hover {
-      color: var(--blue);
-    }
   }
 
   ul {
