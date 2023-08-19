@@ -375,6 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
       '.menu-contacts.custom-hover > li',
       '.menu-socials.custom-hover > li',
       '.header-sublist.custom-hover > li',
+      '.movingTips-tabs > li'
     ])
 
     scopedHover([
@@ -617,6 +618,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   }, 0)
+
+  const tabs = document.querySelectorAll('.faq-tabs');
+
+  if (tabs.length) {
+    tabs.forEach(tab => {
+      const buttons = tab.querySelectorAll('.faq-button');
+      const content = tab.querySelector('.faq-content');
+    if (buttons.length && content) {
+
+      content.addEventListener('click', function () {
+        const btn = event.target.closest('.accordion-button');
+        if (btn) {
+          btn.classList.toggle('active');
+        }
+      })
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function () {
+          buttons.forEach(el => {
+            el.classList.remove('active');
+          })
+          this.classList.add('active');
+          if (this.nextElementSibling) {
+            content.innerHTML = this.nextElementSibling.innerHTML
+          }
+
+          customHover([
+            '.faq-content .faq-accord > li',
+          ])
+          
+        })
+      })
+
+      buttons[0].click();
+
+    }
+    })
+  }
 
 });
 

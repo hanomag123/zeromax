@@ -1,0 +1,161 @@
+.faq {
+  background-color: var(--dblue);
+
+  padding-top: 36.5rem;
+  padding-bottom: 7.8rem;
+
+  overflow: hidden;
+  position: relative;
+  @include breakpoint($xl-bp) {
+    padding-top: 26rem;
+  }
+  & > * {
+    z-index: 1;
+    position: relative;
+  }
+  & > .faq-bg {
+    position: absolute;
+    z-index: 0;
+  }
+
+  .movingTips-tabs {
+    font-size: 7rem;
+    line-height: 8.9rem;
+    gap: 6.5rem;
+    @include breakpoint($xl-bp) {
+      font-size: 4rem;
+      line-height: 4.9rem;
+      gap: 1.5rem;
+    }
+  }
+}
+
+.faq-bg {
+  bottom: 2.5rem;
+  right: 14.5rem;
+  box-sizing: content-box;
+  width: 66.2rem;
+  height: 38.5rem;
+  @include breakpoint($xl-bp) {
+    width: 26.1rem;
+    height: 16.2rem;
+    right: 0;
+    bottom: unset;
+    top: 8.5rem;
+  }
+}
+
+.faq-tabs {
+  margin-top: 13rem;
+
+  display: grid;
+  grid-template-columns: 33.5rem 1fr;
+  gap: 13.8rem;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+    gap: 5rem;
+  }
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  @include breakpoint($xl-bp) {
+    gap: 2rem;
+  }
+}
+.faq-item {
+  
+}
+.faq-button {
+  font-family: 'Unbounded';
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+
+  padding-top: 3rem;
+  border-top: 0.1rem solid var(--black);
+
+  width: 100%;
+  text-align: start;
+  transition: border-color .3s, color .3s;
+  @include breakpoint($xl-bp) {
+    padding-top: 2rem;
+  }
+  &.active,
+  &:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+}
+.faq-content {
+  & > * {
+    animation: fadeEffect .7s;
+    will-change: opacity;
+  }
+}
+
+.faq-inner {
+  display: none;
+}
+
+.faq-accord {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @include breakpoint($xl-bp) {
+    gap: 3rem;
+  }
+  & > li {
+    padding-bottom: 4rem;
+    border-bottom: 0.1rem solid var(--border);
+    @include breakpoint($xl-bp) {
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+.faq-accord-btn {
+  font-family: 'Unbounded';
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 4rem;
+  text-align: start;
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    gap: 1rem;
+  }
+  .plus {
+    margin-top: 1rem;
+  }
+}
+
+.faq-accord-inner {
+  & > *:first-child {
+    margin-top: 4rem;
+    @include breakpoint($xl-bp) {
+      margin-top: 1.5rem;
+    }
+  }
+  & > * {
+    max-width: 80.9rem;
+  }
+  p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2rem;
+    @include breakpoint($xl-bp) {
+      font-size: 1.5rem;
+      line-height: 1.9rem;
+      
+    }
+  }
+}
