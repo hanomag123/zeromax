@@ -8,11 +8,13 @@
   position: relative;
   @include breakpoint($xl-bp) {
     padding-top: 26rem;
+    padding-bottom: 3rem;
   }
   & > * {
     z-index: 1;
     position: relative;
   }
+  & > .reviews-bg,
   & > .faq-bg {
     position: absolute;
     z-index: 0;
@@ -63,12 +65,10 @@
   flex-direction: column;
   gap: 4.8rem;
   @include breakpoint($xl-bp) {
-    gap: 2rem;
+    gap: 1.8rem;
   }
 }
-.faq-item {
-  
-}
+
 .faq-button {
   font-family: 'Unbounded';
   font-size: 1.6rem;
@@ -83,6 +83,9 @@
   transition: border-color .3s, color .3s;
   @include breakpoint($xl-bp) {
     padding-top: 2rem;
+
+    font-size: 1.4rem;
+    line-height: 1.7rem;
   }
   &.active,
   &:hover {
@@ -135,6 +138,9 @@
   }
   .plus {
     margin-top: 1rem;
+    @include breakpoint($xl-bp) {
+      margin-top: 0.6rem;
+    }
   }
 }
 

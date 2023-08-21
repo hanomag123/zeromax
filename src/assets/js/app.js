@@ -371,6 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
       '.serv-list > li',
       '.mov > li',
       '.footer-socials.custom-hover > li',
+      '.contacts-info.custom-hover > li',
       '.footer-contacts.custom-hover > li',
       '.menu-contacts.custom-hover > li',
       '.menu-socials.custom-hover > li',
@@ -654,6 +655,28 @@ document.addEventListener("DOMContentLoaded", () => {
       buttons[0].click();
 
     }
+    })
+  }
+
+  const scrolledObj = document.querySelectorAll('[data-scroll]');
+
+  if (scrolledObj.length) {
+    scrolledObj.forEach(el => {
+      el.addEventListener('click', function () {
+        const sc = document.querySelector(this.dataset.scroll)
+        if (sc) {
+          const header = document.querySelector('header');
+          let headerH = null;
+          if (header) {
+            headerH = header.getBoundingClientRect().height;
+          }
+          const yOffset = headerH ? -headerH : -200;
+          const onMedia = xl.matches ? 0 : 50;
+          const y = sc.getBoundingClientRect().top + window.pageYOffset + yOffset - onMedia;
+
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      })
     })
   }
 

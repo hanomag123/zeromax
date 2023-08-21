@@ -329,6 +329,18 @@
     padding: 0 1rem;
     background-color: var(--body);
     color: var(--black);
+    @include breakpoint($xl-bp) {
+      font-size: 1.2rem;
+      top: -0.8rem;
+    }
+  }
+
+  &.--textarea {
+    height: 16rem;
+    resize: none;
+    @include breakpoint($xl-bp) {
+      height: 12rem;
+    }
   }
 }
 
@@ -339,10 +351,7 @@
     &:focus+.input-placeholder,
     &.havetext+.input-placeholder {
       background-color: var(--white);
-      @include breakpoint($xl-bp) {
-        font-size: 1.2rem;
-        top: -0.8rem;
-      }
+
     }
   }
 }
@@ -362,7 +371,6 @@ input:-webkit-autofill:focus+.input-placeholder,
 input:-webkit-autofill:active+.input-placeholder {
   top: -1.2rem;
   padding: 0 1rem;
-  background-color: var(--white);
   color: var(--black);
 
   font-size: 1.8rem;
@@ -370,9 +378,6 @@ input:-webkit-autofill:active+.input-placeholder {
   @include breakpoint($xl-bp) {
     font-size: 1.2rem;
     top: -0.6rem;
-
-    font-size: 1.5rem;
-    line-height: 1.8rem;
   }
 }
 
@@ -392,6 +397,9 @@ input:-webkit-autofill:active+.input-placeholder {
   white-space: nowrap;
   max-width: calc(100% - 4rem);
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
   @include breakpoint($xl-bp) {
     font-size: 1.5rem;
     line-height: 1.8rem;
@@ -399,6 +407,26 @@ input:-webkit-autofill:active+.input-placeholder {
     top: 2rem;
     left: 1.5rem;
     max-width: calc(100% - 2.2rem);
+  }
+
+  &.overflow-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    @include breakpoint($xl-bp) {
+      max-width: calc(100% - 3.2rem);
+    }
+
+  }
+
+  .overflow-ellipsis {
+    @include breakpoint($xl-bp) {
+      max-width: 18rem;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }
 
@@ -1527,9 +1555,15 @@ input:-webkit-autofill:active+.input-placeholder {
   @include breakpoint($xl-bp) {
     padding-top: 8rem;
   }
-  &.--services {
+  &.--pt-7 {
     @include breakpoint($xl-bp) {
       padding-top: 7rem;
+    }
+  }
+  &.--pt-10 {
+    padding-top: 10rem;
+    @include breakpoint($xl-bp) {
+      padding-top: 9rem;
     }
   }
 }

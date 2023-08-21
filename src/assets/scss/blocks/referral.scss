@@ -1,0 +1,256 @@
+.bg-dblack {
+  background-color: var(--dblack);
+  color: var(--white);
+
+  .input {
+    border-color: #5D5D5D;
+    &:focus+.input-placeholder,
+    &.havetext+.input-placeholder {
+      background-color: var(--dblack);
+      color: var(--white);
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30rem var(--dblack) inset !important;
+    -webkit-text-fill-color: var(--white);
+  }
+
+  /* Change the white to any color */
+  input:-webkit-autofill+.input-placeholder,
+  input:-webkit-autofill:hover+.input-placeholder,
+  input:-webkit-autofill:focus+.input-placeholder,
+  input:-webkit-autofill:active+.input-placeholder {
+    color: var(--white);
+    background-color: var(--dblack);
+  }
+}
+
+.referral {
+  padding-top: 26rem;
+  padding-bottom: 11.1rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  position: relative;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    padding-top: 21.7rem;
+    padding-bottom: 8rem;
+  }
+  &>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  .referral-bg {
+    position: absolute;
+    z-index: 0;
+  }
+}
+
+.referral-left {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10.5rem;
+  @include breakpoint($xl-bp) {
+    padding-bottom: 4rem;
+  }
+}
+
+.referral-title {
+  max-width: 57.2rem;
+
+  font-size: 10rem;
+  line-height: 12.4rem;
+  @include breakpoint($xl-bp) {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
+
+.referral-desc {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+
+  max-width: 45.3rem;
+
+  margin-top: 6rem;
+  margin-right: 1rem;
+  margin-left: auto;
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+
+    margin-top: 3rem;
+    margin-right: 0;
+  }
+}
+
+.referral-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 2.1rem;
+}
+
+.referral-subtitle {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 5rem;
+
+  max-width: 45.3rem;
+  @include breakpoint($xl-bp) {
+    font-size: 2.2rem;
+    line-height: 2.7rem;
+  }
+}
+
+.referral-arrow {
+  width: 9.8rem;
+  height: 9.8rem;
+  border: 0.1rem solid var(--white);
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  @include breakpoint($xl-bp) {
+    width: 7.4rem;
+    height: 7.4rem;
+    border-radius: 2rem;
+  }
+  &:hover {
+    svg {
+      transform: rotate(90deg) translate3d(1rem, 0, 0);
+    }
+  }
+  svg {
+    width: 4rem;
+    height: 4rem;
+    stroke: var(--white);
+    fill: transparent;
+    transition: transform .3s;
+    transform: rotate(90deg);
+  }
+}
+
+.referral-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.ref-block {
+  padding-top: 11rem;
+  padding-bottom: 11.6rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: 13.8rem;
+  @include breakpoint($xl-bp) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.ref-title {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 6.2rem;
+
+  max-width: 57.2rem;
+  @include breakpoint($xl-bp) {
+    font-size: 3.4rem;
+    line-height: 4.2rem;
+  }
+}
+
+.ref-desc {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+
+  max-width: 45.3rem;
+  padding-bottom: 0.8rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 3rem;
+    padding-bottom: 0;
+  }
+}
+
+.ref-form {
+  width: 100%;
+  margin-top: 6rem;
+  padding-right: 11.6rem;
+  padding-left: 11.6rem;
+  @include breakpoint($xl-bp) {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 3rem;
+  }
+  .modal-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    max-width: 57.1rem;
+    margin-top: 2rem;
+    @include breakpoint($sm-bp) {
+      flex-direction: column-reverse;
+      margin-top: 1rem;
+    }
+  }
+
+  .modal-terms {
+    @include breakpoint($xl-bp) {
+      margin-top: 1rem;
+    }
+  }
+
+  .modal-button {
+    width: 33.5rem;
+    @include breakpoint($sm-bp) {
+      width: 100%;
+    }
+  }
+}
+
+.ref-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 5rem;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.ref-subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+
+  grid-column: 2 span;
+  padding-bottom: 1rem;
+  @include breakpoint($xl-bp) {
+    grid-column: 1 span;
+
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    padding-bottom: 0.5rem;
+  }
+}

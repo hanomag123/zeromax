@@ -1,0 +1,368 @@
+.contacts {
+  padding-top: 20rem;
+
+  position: relative;
+  overflow: hidden;
+
+  padding-right: 0;
+  @include breakpoint($xl-bp) {
+    padding-right: 2rem;
+    padding-top: 10rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-right: 1.1rem;
+  }
+}
+
+.contacts-container {
+  padding-bottom: 8.5rem;
+  @include breakpoint($xl-bp) {
+    padding-bottom: 5.1rem;
+  }
+}
+
+
+.contacts-title {
+  font-size: 10rem;
+  font-weight: 400;
+  line-height: 12.4rem;
+
+  color: var(--blue);
+
+  @include breakpoint($xl-bp) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+  }
+}
+
+.contacts-location-wrapper {
+  margin-top: 7rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 4.3rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
+
+.contacts-location {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3rem;
+  @include breakpoint($xl-bp) {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
+
+.contacts-location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 2rem;
+  }
+  &>* {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2rem;
+    @include breakpoint($xl-bp) {
+      font-size: 1.5rem;
+      line-height: 1.9rem;
+    }
+  }
+
+}
+
+.contacts-info {
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 4rem;
+
+  margin-top: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 65rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin-top: 4rem;
+    gap: 1rem;
+  }
+  a {
+    color: var(--blue);
+    width: 100%;
+    display: block;
+  }
+}
+
+.contacts-bg {
+  position: absolute;
+  top: 27.7rem;
+  left: 0;
+
+  width: 100%;
+  height: 60rem;
+
+  z-index: -1;
+  background-color: var(--footer);
+  @include breakpoint($xl-bp) {
+    top: 12.8rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    max-width: 96rem;
+    margin-left: auto;
+    display: block;
+    @include breakpoint($xl-bp) {
+      display: none;
+    }
+  }
+}
+
+.contacts-map {
+  height: 65rem;
+  margin-left: 12rem;
+  @include breakpoint($xl-bp) {
+    margin-left: 0;
+    height: 45rem;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.contacts-callback {
+  margin-top: 15rem;
+  display: grid;
+  grid-template-columns: 59.3rem 1fr;
+  justify-content: space-between;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    margin-top: 6rem;
+  }
+}
+
+.contacts-subtitle {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 7.4rem;
+
+  padding-left: 12rem;
+  @include breakpoint($xl-bp) {
+    font-size: 3.4rem;
+    font-weight: 400;
+    line-height: 4.2rem;
+    padding-left: 0;
+  }
+
+}
+
+.contacts-form {
+  max-width: 57.1rem;
+  margin-left: auto;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include breakpoint($xl-bp) {
+      gap: 1rem;
+    }
+  }
+
+  .modal-wrapper {
+    @include breakpoint($xl-bp) {
+      gap: 2rem;
+    }
+  }
+}
+
+.contacts-text {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+  
+  max-width: 48.4rem;
+  margin-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.contacts-share {
+  margin-top: 15rem;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    margin-top: 7rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.contacts-left {
+  padding-top: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 7rem;
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  @include breakpoint($xl-bp) {
+    flex-direction: column;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 3rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+  .text-blue {
+    transition: color .3s;
+  }
+  &:hover {
+    &::before {
+      background-color: var(--blue);
+    }
+    .text-blue {
+      color: var(--white);
+    }
+    .contacts-arrow {
+      border-color: var(--white);
+      svg {
+        stroke: var(--white);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: var(--grey2);
+    z-index: -1;
+
+    transition: background-color .3s;
+  }
+}
+.contacts-shareTitle {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 6.2rem;
+
+  color: var(--black);
+
+  margin-top: 11.2rem;
+  @include breakpoint($xl-bp) {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+    margin-top: 0;
+  }
+}
+.contacts-arrow {
+  width: 12rem;
+  height: 12rem;
+  border: 0.1rem solid var(--blue);
+  border-radius: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+  transition: border-color .3s;
+  @include breakpoint($xl-bp) {
+    width: 7.4rem;
+    height: 7.4rem;
+    border-radius: 2rem;
+    margin-top: 5rem;
+  }
+  svg {
+    width: 4rem;
+    height: 4rem;
+    fill: transparent;
+    stroke: var(--blue);
+    transition: stroke .3s, transform .3s;
+  }
+}
+.contacts-right {
+  padding-left: 12.8rem;
+  padding-bottom: 8.2rem;
+  padding-top: 8.2rem;
+
+  display: flex;
+  flex-direction: column;
+  @include breakpoint($xl-bp) {
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
+    min-height: 33.2rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+}
+.contacts-career-img {
+  width: 50%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  @include breakpoint($xl-bp) {
+    width: 100%;
+  }
+}
+.contacts-career-title {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 6.2rem;
+  
+  color: #57D5DB;
+
+  margin-top: auto;
+  @include breakpoint($xl-bp) {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+  }
+}
+.contacts-career-subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.0rem;
+
+  color: var(--white);
+
+  margin-top: 3rem;
+
+  max-width: 48.4rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    margin-top: 2rem;
+  }
+}
