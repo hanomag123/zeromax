@@ -390,23 +390,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function clickHandler() {
       if (!event.target.closest('.menu-item')) {
-          menuButtons.forEach(b => {
-            b.classList.remove('not-active');
-            b.classList.remove('hover')
-          })
-          document.removeEventListener('click', clickHandler)
+        menuButtons.forEach(b => {
+          b.classList.remove('not-active');
+          b.classList.remove('hover')
+        })
+        document.removeEventListener('click', clickHandler)
       }
     }
 
     if (menuButtons.length) {
       menuButtons.forEach(el => {
         el.addEventListener('pointerenter', function () {
-            if (!xl.matches) {
-              menuButtons.forEach(btn => {
-                btn.classList.add('not-active')
-              })
-              this.classList.add('hover');
-            }
+          if (!xl.matches) {
+            menuButtons.forEach(btn => {
+              btn.classList.add('not-active')
+            })
+            this.classList.add('hover');
+          }
         })
       })
       menuButtons.forEach(el => {
@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuButtons.forEach(btn => {
               btn.classList.remove('not-active')
             })
-              this.classList.remove('hover');
+            this.classList.remove('hover');
           }
 
         })
@@ -437,16 +437,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-        menuButtons.forEach(btn => {
-          btn.classList.add('not-active');
+      menuButtons.forEach(btn => {
+        btn.classList.add('not-active');
+        btn.classList.remove('hover');
+        if (this.classList.contains('hover')) {
           btn.classList.remove('hover');
-          if (this.classList.contains('hover')) {
-            btn.classList.remove('hover');
-          }
-        })
+        }
+      })
 
-        this.classList.add('hover');
-        document.addEventListener('click', clickHandler)
+      this.classList.add('hover');
+      document.addEventListener('click', clickHandler)
     }
 
     if (xl.matches) {
@@ -476,10 +476,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuButtons2.length) {
       menuButtons2.forEach(el => {
         el.addEventListener('pointerenter', function () {
-            menuButtons2.forEach(btn => {
-              btn.classList.add('not-active')
-            })
-            this.classList.add('hover');
+          menuButtons2.forEach(btn => {
+            btn.classList.add('not-active')
+          })
+          this.classList.add('hover');
         })
       })
       menuButtons2.forEach(el => {
@@ -487,14 +487,14 @@ document.addEventListener("DOMContentLoaded", () => {
           menuButtons2.forEach(btn => {
             btn.classList.remove('not-active')
           })
-            this.classList.remove('hover');
+          this.classList.remove('hover');
 
         })
       })
     }
   }, 0)
 
-  
+
   function modalHandler() {
     const modal = document.querySelector(`${this.dataset?.modal}`) || this
     if (modal.classList.contains('regModal') && modal.hidden) {
@@ -566,14 +566,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const fragment = document.createDocumentFragment();
         [...list.children].forEach(i => fragment.appendChild(i.cloneNode(true)));
         list.appendChild(fragment);
-    
+
         const clone = list.cloneNode(true);
         container.appendChild(clone);
-    
+
         const tl = gsap.timeline({
           repeat: -1,
         });
-    
+
         tl.to(list, {
           x: reverse !== null ? "100%" : "-100%",
           ease: "none",
@@ -584,38 +584,38 @@ document.addEventListener("DOMContentLoaded", () => {
           ease: "none",
           duration: list.children.length * 5,
         }, "sin");
-    
+
       })
     }
-    
-  const banerList = document.querySelectorAll(".baner");
-  banerList.forEach(baner => {
-    const reverse = baner.getAttribute("data-reverse");
-    const container = baner.querySelector(".baner__container")
-    const list = baner.querySelector(".baner__list");
-    const fragment = document.createDocumentFragment();
-    [...list.children].forEach(i => fragment.appendChild(i.cloneNode(true)));
-    list.appendChild(fragment);
 
-    const clone = list.cloneNode(true);
-    container.appendChild(clone);
+    const banerList = document.querySelectorAll(".baner");
+    banerList.forEach(baner => {
+      const reverse = baner.getAttribute("data-reverse");
+      const container = baner.querySelector(".baner__container")
+      const list = baner.querySelector(".baner__list");
+      const fragment = document.createDocumentFragment();
+      [...list.children].forEach(i => fragment.appendChild(i.cloneNode(true)));
+      list.appendChild(fragment);
 
-    const tl = gsap.timeline({
-      repeat: -1,
-    });
+      const clone = list.cloneNode(true);
+      container.appendChild(clone);
 
-    tl.to(list, {
-      x: reverse !== null ? "100%" : "-100%",
-      ease: "none",
-      duration: list.children.length * 10,
-    }, "sin")
-    tl.to(clone, {
-      x: reverse !== null ? "100%" : "-100%",
-      ease: "none",
-      duration: list.children.length * 10,
-    }, "sin");
+      const tl = gsap.timeline({
+        repeat: -1,
+      });
 
-  })
+      tl.to(list, {
+        x: reverse !== null ? "100%" : "-100%",
+        ease: "none",
+        duration: list.children.length * 10,
+      }, "sin")
+      tl.to(clone, {
+        x: reverse !== null ? "100%" : "-100%",
+        ease: "none",
+        duration: list.children.length * 10,
+      }, "sin");
+
+    })
 
 
   }, 0)
@@ -626,35 +626,35 @@ document.addEventListener("DOMContentLoaded", () => {
     tabs.forEach(tab => {
       const buttons = tab.querySelectorAll('.faq-button');
       const content = tab.querySelector('.faq-content');
-    if (buttons.length && content) {
+      if (buttons.length && content) {
 
-      content.addEventListener('click', function () {
-        const btn = event.target.closest('.accordion-button');
-        if (btn) {
-          btn.classList.toggle('active');
-        }
-      })
-
-      buttons.forEach(btn => {
-        btn.addEventListener('click', function () {
-          buttons.forEach(el => {
-            el.classList.remove('active');
-          })
-          this.classList.add('active');
-          if (this.nextElementSibling) {
-            content.innerHTML = this.nextElementSibling.innerHTML
+        content.addEventListener('click', function () {
+          const btn = event.target.closest('.accordion-button');
+          if (btn) {
+            btn.classList.toggle('active');
           }
-
-          customHover([
-            '.faq-content .faq-accord > li',
-          ])
-          
         })
-      })
 
-      buttons[0].click();
+        buttons.forEach(btn => {
+          btn.addEventListener('click', function () {
+            buttons.forEach(el => {
+              el.classList.remove('active');
+            })
+            this.classList.add('active');
+            if (this.nextElementSibling) {
+              content.innerHTML = this.nextElementSibling.innerHTML
+            }
 
-    }
+            customHover([
+              '.faq-content .faq-accord > li',
+            ])
+
+          })
+        })
+
+        buttons[0].click();
+
+      }
     })
   }
 
@@ -679,6 +679,214 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   }
+
+  const localeEn = {
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    today: 'Today',
+    clear: 'Clear',
+    dateFormat: 'MM/dd/yyyy',
+    timeFormat: 'hh:mm aa',
+    firstDay: 0
+  };
+
+  const dates = document.querySelectorAll('.date-input');
+
+  if (dates.length) {
+    dates.forEach(el => {
+      const date = new AirDatepicker(el, {
+        container: xl.matches ? '' : el.parentElement,
+        isMobile: xl.matches,
+        autoClose: true,
+        minDate: new Date(),
+        locale: localeEn,
+        dateFormat: "dd.MM.yy",
+        onShow: () => {
+          date.$el.classList.add('havetext');
+        },
+        onHide: () => {
+          if (!date.$el.value) {
+            date.$el.classList.remove('havetext');
+          } else {
+            date.$el.classList.add('havetext');
+          }
+        },
+        onSelect: () => {
+          if (!date.$el.value) {
+            date.$el.classList.remove('havetext');
+          } else {
+            date.$el.classList.add('havetext');
+          }
+        }
+      });
+    });
+
+  }
+
+  const calcButton = document.querySelector('.calc-plus button');
+
+
+  if (calcButton) {
+    let num = 1;
+    calcButton.addEventListener('click', function () {
+      const cloneStop = document.getElementById('cloneStop');
+      if (cloneStop) {
+        const cloneNum = cloneStop.querySelector('.cloneNum');
+        const inputs = cloneStop.querySelectorAll('input');
+        if (inputs.length) {
+          inputs.forEach(el => {
+            if (/\d+/.test(el.name)) {
+              el.name = el.name.replace(/\d+/, num);
+            } else {
+              el.name = el.name + num;
+            }
+          })
+        }
+        cloneNum.innerHTML = num;
+        this.parentElement.insertAdjacentHTML('beforebegin', cloneStop.innerHTML);
+        num++;
+      }
+
+    })
+
+    document.addEventListener('click', function () {
+      const deleteBtn = event.target.closest('.calc-delete');
+      if (deleteBtn) {
+        deleteBtn.parentElement.remove();
+
+        const locs = document.querySelectorAll('.calc-form .calc-loc .cloneNum');
+
+        if (locs.length) {
+          num = 1;
+          locs.forEach(loc => {
+            const parent = loc.closest('.calc-loc');
+
+            if (parent) {
+              const inputs = parent.querySelectorAll('input');
+              if (inputs.length) {
+                inputs.forEach(el => {
+                  if (/\d+/.test(el.name)) {
+                    el.name = el.name.replace(/\d+/, num);
+                  } else {
+                    el.name = el.name + num;
+                  }
+                })
+              }
+              loc.innerHTML = num;
+              num++;
+            }
+          })
+        } else {
+          num = 1;
+          const cloneNum = cloneStop.querySelector('.cloneNum');
+          if (cloneNum) {
+            cloneNum.innerHTML = num;
+          }
+        }
+      }
+    })
+  }
+
+  var x, i, j, l, ll, selElmnt, a, b, c, p;
+  /* Look for any elements with the class "custom-select": */
+  x = document.getElementsByClassName("custom-select");
+  l = x.length;
+  for (i = 0; i < l; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    var placeholder = x[i].dataset.placeholder;
+    ll = selElmnt.length;
+    /* For each element, create a new DIV that will act as the selected item: */
+    a = document.createElement("DIV");
+    a.setAttribute("class", "select-selected");
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+    /* For each element, create a new DIV that will contain the option list: */
+    b = document.createElement("DIV");
+    b.setAttribute("class", "select-items custom-hover select-hide");
+    
+    if (placeholder) {
+      p = document.createElement("DIV");
+      p.setAttribute("class", "select-placeholder");
+      p.innerHTML = placeholder;
+      b.appendChild(p);
+      
+    }
+    for (j = 1; j < ll; j++) {
+      /* For each option in the original select element,
+      create a new DIV that will act as an option item: */
+      c = document.createElement("DIV");
+      c.innerHTML = selElmnt.options[j].innerHTML;
+      c.addEventListener("click", function (e) {
+        /* When an item is clicked, update the original select box,
+        and the selected item: */
+        var y, i, k, s, h, sl, yl, sel;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        sel = this.parentNode.previousSibling.classList.add('select-selected--active')
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+      });
+      b.appendChild(c);
+    }
+    x[i].appendChild(b);
+    a.addEventListener("click", function (e) {
+      /* When the select box is clicked, close any other select boxes,
+      and open/close the current select box: */
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+  }
+
+  customHover(
+    [
+      '.select-items > div'
+    ]
+  )
+
+  function closeAllSelect(elmnt) {
+    /* A function that will close all select boxes in the document,
+    except the current select box: */
+    var x, y, i, xl, yl, arrNo = [];
+    x = document.getElementsByClassName("select-items");
+    y = document.getElementsByClassName("select-selected");
+    xl = x.length;
+    yl = y.length;
+    for (i = 0; i < yl; i++) {
+      if (elmnt == y[i]) {
+        arrNo.push(i)
+      } else {
+        y[i].classList.remove("select-arrow-active");
+      }
+    }
+    for (i = 0; i < xl; i++) {
+      if (arrNo.indexOf(i)) {
+        x[i].classList.add("select-hide");
+      }
+    }
+  }
+
+  /* If the user clicks anywhere outside the select box,
+  then close all select boxes: */
+  document.addEventListener("click", closeAllSelect);
+
 
 });
 

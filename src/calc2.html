@@ -1,0 +1,152 @@
+---
+layout: custom
+title: Moving Calculator 2
+---
+
+<section class="calc">
+  <h1 class="calc-title container">Moving <br><span class="text-blue">Calculator</span></h1>
+
+  <div class="calc-container">
+    <ul class="order-list container">
+      <li class="completed">Your <br class="xl-hidden">Location</li>
+      <li class="active">Move <br class="xl-hidden">and Info</li>
+      <li>Calculator</li>
+    </ul>
+
+    <div class="container">
+
+      <div class="calc-form">
+        <form action="#">
+
+          <a href="#" class="calc-back xl-block">Back</a>
+
+
+          <div class="calc-block bg-white">
+            <h2 class="calc-subtitle">Your Move and Personal Info</h2>
+            <div class="calc-inputs">
+              <div class="custom-select w-full">
+                <select name="gender">
+                  <option value="Mr">Mr</option>
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Miss">Miss</option>
+                  <option value="Ms">Ms</option>
+                </select>
+              </div>
+              <div class="input-wrapper">
+                <input type="text" name="name" class="input w-full" aria-label="street address" required>
+                <div class="input-placeholder">Your name</div>
+              </div>
+              <div class="input-wrapper">
+                <input type="email" name="email" class="input w-full" aria-label="street address" required>
+                <div class="input-placeholder">Your email</div>
+              </div>
+              <div class="input-wrapper">
+                <input type="tel" name="tel" class="input w-full" aria-label="street address" required>
+                <div class="input-placeholder">Your phone number</div>
+              </div>
+            </div>
+            <div class="calc-checkboxes">
+              <div class="calc-question">Additional Services:</div>
+              <div class="calc-checkbox-wrapper">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="PackingServices">
+                  <span class="checkbox"></span>
+                  Packing Services
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="PackingMaterials">
+                  <span class="checkbox"></span>
+                  Packing Materials
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="GroundFloor">
+                  <span class="checkbox"></span>
+                  Ground Floor
+                </label>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" name="Storage">
+                  <span class="checkbox"></span>
+                  Storage
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="Piano">
+                  <span class="checkbox"></span>
+                  Piano
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="Garbageremoval">
+                  <span class="checkbox"></span>
+                  Garbage removal
+                </label>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" name="Transportationofvehicle">
+                  <span class="checkbox"></span>
+                  Transportation of vehicle
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="Items">
+                  <span class="checkbox"></span>
+                  Items disassembly and reassembly
+                </label>
+              </div>
+            </div>
+
+            <div class="calc-inputs2">
+              <div class="calc-question">Additional Information:</div>
+              <div class="calc-inputs-wrapper">
+                <div class="custom-select w-full" data-placeholder="Type of move">
+                  <select name="Typeofmove">
+                    <option value="none" selected>Type of move</option>
+                    <option value="Residential">Residential</option>
+                    <option value="Office">Office</option>
+                    <option value="SpecialEvent">Special Event</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="custom-select w-full" data-placeholder="Where did you find us?">
+                  <select name="Typeofmove">
+                    <option value="none">Where did you find us?</option>
+                    <option value="Google">Google</option>
+                    <option value="Yelp">Yelp</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="123movers">123movers</option>
+                    <option value="Home Advisor">Home Advisor</option>
+                    <option value="Thumbtack">Thumbtack</option>
+                    <option value="Tracks on the street">Tracks on the street</option>
+                    <option value="Yahoo">Yahoo</option>
+                    <option value="Nextdoor">Nextdoor</option>
+                  </select>
+                </div>
+
+                <div class="input-wrapper calc-textarea">
+                  <textarea name="message" class="input w-full" aria-label="message" placeholder="Please enter pick up or delivery, day or time related notes here. You will be able to add more notes regarding your furniture in the next step. Thank you!"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="calc-wrapper">
+
+            <a href="#" class="calc-back xl-hidden">Back</a>
+
+            <button type="submit" class="page-button calc-button" aria-label="submit">Continue
+              <span class="ball">
+                <svg>
+                  <use href='#arrowR'></use>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="last-margin"></div>

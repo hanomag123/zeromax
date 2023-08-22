@@ -1,0 +1,145 @@
+---
+layout: custom
+title: Moving Calculator
+---
+
+<section class="calc">
+  <h1 class="calc-title container">Moving <br><span class="text-blue">Calculator</span></h1>
+
+  <div class="calc-container">
+    <ul class="order-list container">
+      <li class="active">Your <br class="xl-hidden">Location</li>
+      <li>Move <br class="xl-hidden">and Info</li>
+      <li>Calculator</li>
+    </ul>
+
+    <div class="container">
+      <div class="calc-form">
+        <form action="#">
+          <div class="calc-date bg-white">
+            <h2 class="calc-subtitle">Select moving date</h2>
+            <div class="input-container relative w-full date-container">
+              <input type="text" name="date" class="input w-full date-input" readonly required autocomplete="off">
+              <svg class="date-icon"><use href='#datepickerIcon'></use></svg>
+            </div>
+          </div>
+  
+          <div class="calc-line">
+            <div class="calc-loc bg-white">
+              <h2 class="calc-subtitle">From*</h2>
+              <div class="calc-desc">Please enter your full address (choose from drop down menu when entering). This way we'll be able to provide with accurate price.</div>
+              <div class="input-wrapper --location calc-input">
+                <input type="text" name="from" class="input w-full" aria-label="street address" required>
+                <div class="input-placeholder">Enter location</div>
+                <svg class="input-icon"><use href='#locIcon'></use></svg>
+              </div>
+              <div class="calc-checkboxes">
+                <div class="calc-question">Is it walk up or elevator building?</div>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="flightstairs">
+                  <span class="checkbox"></span>
+                  Flight of stairs
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="Elevator">
+                  <span class="checkbox"></span>
+                  Elevator
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="GroundFloor">
+                  <span class="checkbox"></span>
+                  Ground Floor
+                </label>
+              </div>
+            </div>
+  
+            <div class="calc-plus">
+              <button type="button" aria-label="add form"><svg><use href='#plusIcon'></use></svg></button>
+            </div>
+    
+            <div class="calc-loc pb-30 bg-white">
+              <h2 class="calc-subtitle">To*</h2>
+              <div class="calc-desc">Please enter your full address (choose from drop down menu when entering). This way we'll be able to provide with accurate price.</div>
+              <div class="input-wrapper --location calc-input">
+                <input type="text" name="from" class="input w-full" aria-label="street address" required>
+                <div class="input-placeholder">Enter location</div>
+                <svg class="input-icon"><use href='#locIcon'></use></svg>
+              </div>
+              <div class="calc-checkboxes">
+                <div class="calc-question">Is it walk up or elevator building?</div>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="flightstairs">
+                  <span class="checkbox"></span>
+                  Flight of stairs
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="Elevator">
+                  <span class="checkbox"></span>
+                  Elevator
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="GroundFloor">
+                  <span class="checkbox"></span>
+                  Ground Floor
+                </label>
+              </div>
+    
+              <div class="calc-no">
+                <div class="input-wrapper">
+                  <input type="text" name="numberofflights" class="input" aria-label="No. of flights" required>
+                </div>
+                No. of flights
+              </div>
+            </div>
+          </div>
+  
+          <div class="calc-wrapper">
+            <button type="submit" class="page-button calc-button" aria-label="submit">Continue
+              <span class="ball">
+                <svg>
+                  <use href='#arrowR'></use>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="last-margin"></div>
+
+<div class="clone-stop" id="cloneStop" hidden>
+  <div class="calc-loc calc-delete-block bg-white">
+    <h2 class="calc-subtitle">Stop <span class="cloneNum">1</span></h2>
+    <div class="calc-desc">Please enter your full address (choose from drop down menu when entering). This way we'll be able to provide with accurate price.</div>
+    <div class="input-wrapper --location calc-input">
+      <input type="text" name="stop" class="input w-full" aria-label="street address" required>
+      <div class="input-placeholder">Enter location</div>
+      <svg class="input-icon"><use href='#locIcon'></use></svg>
+    </div>
+    <div class="calc-checkboxes">
+      <div class="calc-question">Is it walk up or elevator building?</div>
+      <label class="checkbox-label">
+        <input type="checkbox" name="WalkupStop">
+        <span class="checkbox"></span>
+        Walk up
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="ElevatorStop">
+        <span class="checkbox"></span>
+        Elevator
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="GroundFloorStop">
+        <span class="checkbox"></span>
+        Ground Floor
+      </label>
+    </div>
+
+    <button class="calc-delete" type="button" aria-label="delete-stop">
+      <svg><use href='#busketIcon'></use></svg>
+    </button>
+  </div>
+</div>

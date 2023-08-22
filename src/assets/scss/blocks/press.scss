@@ -1,0 +1,195 @@
+.press {
+  padding-top: 36.5rem;
+  padding-bottom: 7.4rem;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.press-search {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  .input-wrapper {
+    width: 100%;
+    width: 45.4rem;
+    max-width: 100%;
+    @include breakpoint($xl-bp) {
+      width: 100%;
+    }
+  }
+}
+
+.press-btn {
+  width: 9.8rem;
+  height: 8rem;
+  background-color: var(--blue);
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: var(--white);
+  }
+}
+
+.press-list-wrapper {
+  margin-top: 10rem;
+}
+.press-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.press-item {
+  min-height: 40rem;
+  a {
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    padding: 3rem;
+    padding-top: 2rem;
+    border-radius: 2rem;
+    background-color: var(--footer);
+
+    @include breakpoint($xl-bp) {
+      padding: 1.5rem;
+    }
+    transition: transform .3s;
+    &:hover {
+      transform: translate3d(0, -1rem, 0);
+
+      .press-button {
+        svg {
+          transform: rotate(-45deg);
+        }
+      }
+
+      .press-subtitle {
+        text-decoration: underline;
+        text-decoration-color: var(--black);
+      }
+    }
+  }
+}
+.press-type {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+
+  color: var(--blue);
+}
+.press-subtitle {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3rem;
+  
+  margin-top: 2rem;
+  max-width: 54.2rem;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color .3s;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.1rem;
+}
+.press-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.press-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  position: relative;
+  top: 1rem;
+}
+.press-day {
+  font-size: 10rem;
+  font-weight: 400;
+  line-height: 10rem;
+  
+  color: var(--blue);
+}
+.press-date {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.0rem;
+  
+  position: relative;
+  bottom: 0.8rem;
+}
+.press-button {
+  width: 10rem;
+  height: 10rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0.1rem solid var(--blue);
+  border-radius: 3rem;
+  @include breakpoint($xl-bp) {
+    width: 6rem;
+    height: 6rem;
+  }
+  svg {
+    width: 3rem;
+    height: 3rem;
+    fill: transparent;
+    stroke: var(--blue);
+  }
+}
+
+.press-item-custom {
+  border-radius: 1.5rem;
+  padding: 3rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 32.8rem;
+    height: 18.7rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='328' height='187' viewBox='0 0 328 187' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M326 186.001V186.001C327.101 84.1537 244.843 1.00123 142.989 1.00124L0 1.00126' stroke='%23ACE1E3' stroke-dasharray='8 8'/%3E%3Ccircle cx='6' cy='6' r='6' transform='matrix(-4.37114e-08 1 1 4.37114e-08 292 81)' fill='white'/%3E%3C/svg%3E%0A");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 4.2rem;
+    right: 6.2rem;
+  }
+
+
+  form {
+    margin-top: auto;
+  }
+  .input-wrapper {
+    margin-top: auto;
+  }
+}
+
+.pressCustom-title {
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 4rem;
+  
+  color: var(--white);
+  max-width: 31rem;
+}

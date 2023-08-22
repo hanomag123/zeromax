@@ -1,6 +1,32 @@
 .dark {
   background-color: var(--dblue);
   color: var(--white);
+
+  .input {
+    border-color: #566A6B;
+    &:focus+.input-placeholder,
+    &.havetext+.input-placeholder {
+      background-color: var(--dblue);
+      color: var(--white);
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30rem var(--dblue) inset !important;
+    -webkit-text-fill-color: var(--white);
+  }
+
+  /* Change the white to any color */
+  input:-webkit-autofill+.input-placeholder,
+  input:-webkit-autofill:hover+.input-placeholder,
+  input:-webkit-autofill:focus+.input-placeholder,
+  input:-webkit-autofill:active+.input-placeholder {
+    color: var(--white);
+    background-color: var(--dblue);
+  }
 }
 
 .services-main {

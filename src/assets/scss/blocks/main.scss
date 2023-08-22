@@ -295,6 +295,36 @@
       }
     }
   }
+
+  &.--location {
+    width: 100%;
+    input {
+      padding-left: 7rem;
+      @include breakpoint($xl-bp) {
+        padding-left: 4.5rem;
+      }
+    }
+    .input-placeholder {
+      margin-left: 5rem;
+      @include breakpoint($xl-bp) {
+        margin-left: 3.5rem;
+      }
+    }
+  }
+}
+
+.input-icon {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  @include breakpoint($xl-bp) {
+    width: 2.4rem;
+    height: 2.4rem;
+    left: 1.5rem;
+  }
 }
 
 .input {
@@ -329,6 +359,7 @@
     padding: 0 1rem;
     background-color: var(--body);
     color: var(--black);
+    margin-left: 0;
     @include breakpoint($xl-bp) {
       font-size: 1.2rem;
       top: -0.8rem;
@@ -351,10 +382,57 @@
     &:focus+.input-placeholder,
     &.havetext+.input-placeholder {
       background-color: var(--white);
-
     }
   }
 }
+
+.bg-blue {
+  background-color: var(--blue);
+  color: var(--white);
+
+  .input {
+    border-color: var(--white);
+    color: var(--white);
+    &:focus+.input-placeholder,
+    &.havetext+.input-placeholder {
+      background-color: var(--blue);
+      color: var(--white);
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30rem var(--blue) inset !important;
+    -webkit-text-fill-color: var(--white);
+  }
+
+  /* Change the white to any color */
+  input:-webkit-autofill+.input-placeholder,
+  input:-webkit-autofill:hover+.input-placeholder,
+  input:-webkit-autofill:focus+.input-placeholder,
+  input:-webkit-autofill:active+.input-placeholder {
+    color: var(--white);
+    background-color: var(--dblack);
+  }
+
+  .modal-custom {
+    background-color: var(--white);
+    svg {
+      stroke: var(--blue);
+    }
+  }
+
+  .modal-terms {
+    color: #BDF4F6;
+    margin-top: 1.5rem;
+    a {
+      color: var(--white);
+    }
+  }
+}
+
 
 /* Change the white to any color */
 input:-webkit-autofill,
@@ -375,6 +453,7 @@ input:-webkit-autofill:active+.input-placeholder {
 
   font-size: 1.8rem;
   line-height: 140%;
+  margin-left: 0;
   @include breakpoint($xl-bp) {
     font-size: 1.2rem;
     top: -0.6rem;
