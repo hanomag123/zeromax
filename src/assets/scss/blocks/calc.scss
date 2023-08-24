@@ -742,6 +742,7 @@
     width: 3rem;
     height: 3rem;
     transition: transform .3s;
+    flex: 0 0 auto;
   }
 
   @include breakpoint($xl-bp) {

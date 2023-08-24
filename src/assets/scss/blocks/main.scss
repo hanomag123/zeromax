@@ -139,7 +139,7 @@
 
 .main-form-top {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
   gap: 13.2rem;
   @include breakpoint($xl-bp) {
@@ -212,6 +212,10 @@
   @include breakpoint($xl-bp) {
     padding-bottom: 1.7rem;
   }
+}
+
+.max-w-454 {
+  max-width: 45.4rem;
 }
 
 .terms {
@@ -414,7 +418,7 @@
   input:-webkit-autofill:focus+.input-placeholder,
   input:-webkit-autofill:active+.input-placeholder {
     color: var(--white);
-    background-color: var(--dblack);
+    background-color: var(--blue);
   }
 
   .modal-custom {
@@ -479,6 +483,7 @@ input:-webkit-autofill:active+.input-placeholder {
   text-overflow: ellipsis;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   @include breakpoint($xl-bp) {
     font-size: 1.5rem;
     line-height: 1.8rem;
@@ -1261,10 +1266,10 @@ input:-webkit-autofill:active+.input-placeholder {
 
 .ab {
   padding-top: 15.5rem;
-  padding-bottom: 14rem;
+  margin-bottom: 14rem;
   @include breakpoint($xl-bp) {
     padding-top: 8rem;
-    padding-bottom: 8rem;
+    margin-bottom: 8rem;
   }
 }
 

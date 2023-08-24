@@ -1,0 +1,173 @@
+<section class="template storage container">
+  <h1 class="template-title">Cheap storage in NYC</h1>
+
+  <div class="template-block">
+    <h2 class="template-subtitle">Our professional and experienced movers will take proper care of customer’s assets and valuable possessions at affordable prices in case you are tight on budget, providing local moving storage space.</h2>
+  </div>
+
+
+  <div class="template-bg">
+    <picture>
+      <source srcset="./assets/images/template/template-7-sm.jpg" media="(max-width:500px)">
+      <img class="main-bg" src="./assets/images/template/template-7.jpg" alt="main">
+    </picture>
+  </div>
+</section>
+
+@include('./partials/shortForm.html', {title: 'We can beat any quote from a licensed mover by 5%-10%'})
+
+{{> preferences}}
+
+<section class="city container">
+  <h2 class="city-title">
+    Take advantage of our All-Inclusive service and your move will be as stress-free as possible
+
+    <span class="line">
+      <svg class="xl-hidden">
+        <use href='#cityIcon'></use>
+      </svg>
+    </span>
+  </h2>
+
+  <button class="city-button page-button --h-190" aria-label="get a quote" data-modal="#getQuote">
+    Get a <br> quote Now <span class="ball"><svg>
+        <use href='#arrowR'></use>
+      </svg></span>
+
+    <span class="line">
+      <svg class="xl-hidden">
+        <use href='#buttonIcon'></use>
+      </svg>
+      <svg class="xl-block">
+        <use href='#cityIcon-sm'></use>
+      </svg>
+    </span>
+  </button>
+
+  <div class="city-bg">
+    <img src="./assets/images/main/city/city-3.svg" alt="city">
+  </div>
+
+
+</section>
+
+<section class="storage-text container bg-footer">
+  <h2 class="temp-title"><span class="text-blue">Full service</span> moving and storage</h2>
+
+  <div class="temp-content">
+    <p>Reliable local movers in NYC provide all the necessary services for a comfortable and carefree move. </p>
+
+    <ul>
+      <li>
+        The relocation starts with a cost and time estimate.
+      </li>
+      <li>
+        Then our experienced packer comes and packs everything, gently carrying it out and transporting it.
+      </li>
+      <li>
+        After transportation, trained local movers in NYC will carry your belongings, if necessary, we will unpack,
+        assemble furniture, and place it at your request.
+      </li>
+    </ul>
+
+    <p>
+      Our top experienced team of local movers will pack and move your belongings from one place to another with great
+      care. The best local movers in NYC provide packing materials and storage units of various sizes. It is worth
+      pointing out that thanks to our well-established transport system, local movers are able to organize your local
+      move quickly and competently, with only the best possible feedback.
+    </p>
+    <p>
+      Find our local movers in NYC and rest assured, we have vehicles of any volume for any number of things, which is
+      always clean and orderly. You don't have to worry about your crystal white sofa or paintings by famous artists.
+      With quality packaging, proper organization, and surgical handling, skilled local movers in NYC will deliver
+      everything in the best condition.
+    </p>
+  </div>
+</section>
+
+<div class="short-accord mt-130 container">
+  <ul class="faq-accord custom-hover">
+    <li>
+      <button class="faq-accord-btn accordion-button" aria-label="toggle accordion">Why to use moving and storage services in NYC<span class="plus"></span></button>
+
+      <div class="accordion-block">
+        <div class="faq-accord-inner accordion-inner">
+          <p>
+            You can easily check if your movers are licensed and insured. This information should be available on
+            the movers’ website https://zeromaxmoving.com/, advertising materials and trucks. Whenever you call a
+            mover, you can ask them for their DOT and MC license numbers and then verify them with the Department
+            of Transportation and the local authority. If they are licensed, by law they have to offer limited
+            liability protection. Some movers offer additional coverage as well or can refer to agents they work
+            with if you need full coverage for your belongings. For more information you can call us at
+            (929)-295-6262.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <button class="faq-accord-btn accordion-button" aria-label="toggle accordion">How to choose the best NYC storage for moving<span class="plus"></span></button>
+
+      <div class="accordion-block">
+        <div class="faq-accord-inner accordion-inner">
+          <p>
+            You can easily check if your movers are licensed and insured. This information should be available on
+            the movers’ website https://zeromaxmoving.com/, advertising materials and trucks. Whenever you call a
+            mover, you can ask them for their DOT and MC license numbers and then verify them with the Department
+            of Transportation and the local authority. If they are licensed, by law they have to offer limited
+            liability protection. Some movers offer additional coverage as well or can refer to agents they work
+            with if you need full coverage for your belongings. For more information you can call us at
+            (929)-295-6262.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <button class="faq-accord-btn accordion-button" aria-label="toggle accordion">ZeroMax storage in New York City advantages<span class="plus"></span></button>
+
+      <div class="accordion-block">
+        <div class="faq-accord-inner accordion-inner">
+          <p>
+            You can easily check if your movers are licensed and insured. This information should be available on
+            the movers’ website https://zeromaxmoving.com/, advertising materials and trucks. Whenever you call a
+            mover, you can ask them for their DOT and MC license numbers and then verify them with the Department
+            of Transportation and the local authority. If they are licensed, by law they have to offer limited
+            liability protection. Some movers offer additional coverage as well or can refer to agents they work
+            with if you need full coverage for your belongings. For more information you can call us at
+            (929)-295-6262.
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+{{> ab}}
+
+{{> weWorking}}
+
+<div class="serv container">
+  <a href="#" class="serv-title">Other <br class="xl-hidden">services</a>
+
+  <ol class="serv-list">
+
+    @loop("./partials/serv.html", [
+    {"title": "Residential"},
+    {"title": "Commercial"},
+    {"title": "Flat fee"},
+    {"title": "Moving boxes"},
+    {"title": "Fine art moving"},
+    {"title": "Storage"},
+    {"title": "Long Distance"},
+    {"title": "Same Day Moving"},
+    ])
+
+  </ol>
+</div>
+
+<section class="we --pt-7 container">
+  {{> we}}
+</section>
+
+<div class="last-margin"></div>

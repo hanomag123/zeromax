@@ -1,0 +1,247 @@
+.comp {
+  background-color: var(--footer);
+
+  padding-bottom: 12rem;
+  padding-top: 13rem; 
+  @include breakpoint($xl-bp) {
+    padding-top: 6rem;
+    background-color: var(--body);
+    padding-bottom: 4rem;
+    .temp-content {
+      ul {
+        li {
+          &:last-child {
+            &::after {
+              background-color: var(--body);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.comp-title {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 5rem;
+
+  max-width: 116.3rem;
+  color: var(--blue);
+  @include breakpoint($xl-bp) {
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+  }
+}
+
+.comp-wrapper {
+  max-width: 68.1rem;
+  margin-top: 0.5rem;
+  box-sizing: content-box;
+  margin-left: auto;
+  padding-right: 1rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 2rem;
+  }
+}
+
+.stages {
+  margin-top: 11rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 6rem;
+  }
+  &.--art {
+    @include breakpoint($xl-bp) {
+      margin-top: 3rem;
+    }
+  }
+}
+.stages-title {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 6.2rem;
+  
+  max-width: 80.8rem;
+  @include breakpoint($xl-bp) {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+  }
+}
+
+.stages-subtitle {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3.0rem;
+
+  max-width: 68.1rem;
+  margin-left: auto;
+  margin-top: 6rem;
+  box-sizing: content-box;
+  padding-right: 1rem;
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+}
+
+.stages-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 5.7rem;
+  &.--art {
+    margin-top: 11rem;
+    @include breakpoint($xl-bp) {
+      margin-top: 4rem;
+    }
+    .stages-bg-1 {
+      top: 4.4rem;
+      @include breakpoint($xl-bp) {
+        top: 0;
+      }
+    }
+    .stages-bg-2 {
+      top: -0.8rem;
+      @include breakpoint($xl-bp) {
+        top: 45.6rem;
+      }
+    }
+    .stages-list li:nth-child(4n+2) {
+      margin-top: 12rem;
+      @include breakpoint($xl-bp) {
+        margin-top: 27.5rem;
+        .stages-inner {
+          padding-right: 1rem;
+        }
+      }
+    }
+    .stages-list li:nth-child(4n+3) {
+      margin-top: 4rem;
+      @include breakpoint($xl-bp) {
+        margin-top: 2rem;
+      }
+    }
+    .stages-list {
+      @include breakpoint($xl-bp) {
+        margin-top: -1rem;
+      }
+    }
+  }
+  @include breakpoint($xl-bp) {
+    margin-top: 6.1rem;
+  }
+}
+
+.stages-list {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+  counter-reset: stage;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+  position: relative;
+  @include breakpoint($xl-bp) {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.9rem;
+    margin-top: -1rem;
+  }
+  li {
+    
+    counter-increment: stage;
+    &:nth-child(4n + 1) {
+      width: 100%;
+    }
+    &:nth-child(4n + 2) {
+      margin-left: auto;
+      margin-top: 4rem;
+      @include breakpoint($xl-bp) {
+        margin-top: 27.5rem;
+      }
+      .stages-inner {
+        padding-right: 3.5rem;
+      }
+    }
+    &:nth-child(4n + 3) {
+      width: 100%;
+      margin-left: 11.8rem;
+      margin-top: -4rem;
+      @include breakpoint($xl-bp) {
+        margin-top: 2rem;
+        margin-left: 0;
+      }
+    }
+    &:nth-child(4n + 4) {
+      margin-left: 70.8rem;
+      margin-top: -17.5rem;
+      @include breakpoint($xl-bp) {
+        margin-top: 2rem;
+        margin-left: auto;
+      }
+    }
+
+  }
+}
+.stages-inner {
+  padding: 2.9rem 3.7rem 3.2rem 4rem;
+  width: 33.5rem;
+  border: 0.1rem solid var(--border);
+  border-radius: 2rem;
+  transform: translate3d(0, 0, 0);
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  @include breakpoint($xl-bp) {
+    padding: 2.5rem 1.4rem 2rem 1.5rem;
+    width: 22.4rem;
+    gap: 2rem;
+  }
+  &::before {
+    content: counter(stage, decimal-leading-zero);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.0rem;
+    color: var(--blue);
+    @include breakpoint($xl-bp) {
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.6rem;
+      
+    }
+  }
+}
+.stages-bg-1 {
+  position: absolute;
+  top: 8.4rem;
+  left: 11.7rem;
+  width: 69rem;
+  height: 50rem;
+  @include breakpoint($xl-bp) {
+    width: 29.8rem;
+    height: 21.6rem;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+.stages-bg-2 {
+  position: absolute;
+  width: 69.0rem;
+  height: 64.5rem;
+  top: 3.2rem;
+  left: 59.3rem;
+  @include breakpoint($xl-bp) {
+    width: 29.8rem;
+    height: 27.8rem;
+    left: 0;
+    top: 52.6rem;
+  }
+}

@@ -181,8 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return wrapper;
   }
 
-
-  setTimeout(() => {
+  window.addEventListener('pageshow', function(event) {
     const inputs = document.querySelectorAll('input,textarea');
     if (inputs.length) {
       inputs.forEach(el => {
@@ -195,7 +194,20 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       });
     }
-  }, 0)
+  });
+
+  const inputs = document.querySelectorAll('input,textarea');
+  if (inputs.length) {
+    inputs.forEach(el => {
+      el.value ? el.classList.add('havetext') : el.classList.remove('havetext');
+      el.addEventListener('input', function () {
+        this.value ? this.classList.add('havetext') : this.classList.remove('havetext');
+      });
+      el.addEventListener('focus', function () {
+        this.parentElement.classList.remove('error');
+      })
+    });
+  }
 
   const accordionButtons = document.querySelectorAll('.accordion-button');
 
@@ -291,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    const revSwipers = document.querySelectorAll('.revs-swiper');
+    const revSwipers = document.querySelectorAll('.revs-swiper, .disting-swiper');
 
     if (revSwipers.length) {
       revSwipers.forEach(el => {
@@ -313,6 +325,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         swiperCard();
         window.addEventListener("resize", swiperCard);
+      })
+    }
+
+    const whySwipers = document.querySelectorAll('.why-swiper');
+
+    if (whySwipers.length) {
+      whySwipers.forEach(el => {
+        new Swiper(el, {
+          slidesPerView: "auto",
+          freeMode: true,
+          grabCursor: true,
+        });
       })
     }
   }, 0)
@@ -376,7 +400,9 @@ document.addEventListener("DOMContentLoaded", () => {
       '.menu-contacts.custom-hover > li',
       '.menu-socials.custom-hover > li',
       '.header-sublist.custom-hover > li',
-      '.movingTips-tabs > li'
+      '.movingTips-tabs > li',
+      '.article-socials.custom-hover > li',
+      ".faq-accord.custom-hover > li",
     ])
 
     scopedHover([
@@ -806,13 +832,13 @@ document.addEventListener("DOMContentLoaded", () => {
     /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items custom-hover select-hide");
-    
+
     if (placeholder) {
       p = document.createElement("DIV");
       p.setAttribute("class", "select-placeholder");
       p.innerHTML = placeholder;
       b.appendChild(p);
-      
+
     }
     for (j = 1; j < ll; j++) {
       /* For each option in the original select element,
@@ -887,6 +913,31 @@ document.addEventListener("DOMContentLoaded", () => {
   then close all select boxes: */
   document.addEventListener("click", closeAllSelect);
 
+  const weWorkingButton = document.querySelectorAll('.weWorking-button-sm');
+
+  function mapHandling () {
+    if (!event.target.closest('.hover')) {
+      weWorkingButton.forEach(btn => {
+        btn.classList.remove('hover');
+      })
+      document.removeEventListener('click', mapHandling)
+    }
+  }
+
+  if (weWorkingButton.length) {
+    weWorkingButton.forEach(el => {
+      el.addEventListener('click', function () {
+        weWorkingButton.forEach(btn => {
+          btn.classList.remove('hover');
+        })
+        this.classList.add('hover');
+
+        if (this.classList.contains('hover')) {
+          document.addEventListener('click', mapHandling)
+        }
+      })
+    })
+  }
 
 });
 

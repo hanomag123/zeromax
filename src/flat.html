@@ -1,0 +1,119 @@
+<section class="template flat container">
+  <h1 class="template-title">Flat fee movers NYC</h1>
+
+  <div class="template-block">
+    <h2 class="template-subtitle">Our moving company can handle all types of moves, whether they are local or out of
+      state. </h2>
+    <div class="template-desc">
+      We can beat any quote from a licensed mover by 5%-10%. Our trained flat fee movers are timely, professional,
+      friendly, and will easily make a big move look simple! ZeroMax moving company strives to offer you the finest
+      relocation experience possible.
+    </div>
+  </div>
+
+
+  <div class="template-bg">
+    <picture>
+      <source srcset="./assets/images/template/template-4-sm.jpg" media="(max-width:500px)">
+      <img class="main-bg" src="./assets/images/template/template-4.jpg" alt="main">
+    </picture>
+  </div>
+</section>
+
+@include('./partials/shortForm2.html', {title: '2 MOVERS FOR 3 HOURS FOR AS LOW AS 245$!'})
+
+{{> preferences}}
+
+<section class="temp-text mt-120 container">
+  <h2 class="temp-title">What is flat fee movers</h2>
+
+  <div class="temp-content">
+    <p>
+      Professional flat rate movers NYC typically use the general calculation that includes an in-home estimation. This
+      means that expert flat fee movers will come to your house to estimate your possessions and determine the volume
+      and value of the property you wish to relocate. Distance, dates, and other aspects will also be considered. Once
+      all the data is collected and recorded, the estimator will be able to provide you with a standard price. Being
+      aware of it ahead of time ensures that the amount you must pay at the end does not surpass that pricing.
+    </p>
+
+    <p>
+      As a rule, the following information is collected to provide a customer with an error-free flat fee moving quote:
+    </p>
+
+    <ul>
+      <li>
+        The expected moving date
+      </li>
+      <li>
+        Addresses for pick-up and delivery
+      </li>
+      <li>
+        The list of removable items, as well as their characteristics
+      </li>
+      <li>
+        If disassembly/reassembly or extra add-ons like packaging or storing are necessary
+      </li>
+    </ul>
+
+    <p>Having expert flat fee movers come in and evaluate your home stuff may be the finest thing you've ever done for
+      your relocation process. You just need to make sure the movers sent by the company delivering NY flat rate moving
+      service to review your goods get all of the data correct. Only then can the company's specialists be able to
+      provide you with an accurate flat price estimate.</p>
+
+    <p>If you're planning a long-range relocation, flat rate furniture movers New York and storage is a better option. A
+      lengthy distance implies that many unpredictable events may occur. These might cause the movers to be late and
+      cost you a lot of money. However, with a fixed cost, you avoid these and many other possible issues, such as
+      traffic jams, narrow stairwells, or broken elevators. Furthermore, the flat price option is advantageous when you
+      need to relocate a large household and, as a consequence, a large number of moving boxes. It's a big comfort to
+      know that the price won't go up when flat rate movers complete the relocation.</p>
+  </div>
+</section>
+
+<section class="disting">
+  <h2 class="disting-title container">
+    <span class="text-blue">What actually distinguishes ZeroMax </span>
+    <span>flat fee moving company in NYC is our advanced technology, cheap pricing, and premium-class servicing.</span>
+  </h2>
+
+  <div class="swiper disting-swiper container">
+    <div class="swiper-wrapper">
+      @loop("./partials/disting.html", [
+      {title: 'We constantly provide our consumers with moving services of <span class="text-blue">the highest standards of quality</span>.', image: './assets/images/why/why-12.svg'}, 
+      {title: 'Depending on the distance and cargo, our flat fee calculation gives the customers a <span class="text-blue">transparent estimate</span> of their prospective relocation expenses.', image: './assets/images/why/why-2.svg'},
+      {title: '<span class="text-blue">The pricing</span> is all-inclusive and is founded on our knowledge, extensive experience, and advanced software solutions.', image: './assets/images/why/why-13.svg'},
+      {title: 'By hiring our flat rate furniture movers NY you are guaranteed to receive <span class="text-blue">minimal fluctuations from the flat fee estimate</span> to the final bill.', image: './assets/images/why/why-11.svg'},
+      {title: 'Our price includes absolutely everything with <span class="text-blue">no additional fees</span>', image: './assets/images/why/why-9.svg'},
+      ])
+    </div>
+  </div>
+</section>
+
+
+{{> ab}}
+
+{{> weWorking}}
+
+<div class="serv container">
+  <a href="#" class="serv-title">Other <br class="xl-hidden">services</a>
+
+  <ol class="serv-list">
+
+    @loop("./partials/serv.html", [
+    {"title": "Local moving"},
+    {"title": "Commercial"},
+    {"title": "Flat fee"},
+    {"title": "Moving boxes"},
+    {"title": "Fine art moving"},
+    {"title": "Storage"},
+    {"title": "Long Distance"},
+    {"title": "Same Day Moving"},
+    ])
+
+  </ol>
+</div>
+
+<section class="we --pt-7 container">
+  {{> we}}
+</section>
+
+<div class="last-margin"></div>

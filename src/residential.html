@@ -1,0 +1,160 @@
+<section class="template --res container">
+  <h1 class="template-title">Residential movers NYC</h1>
+
+  <div class="template-block">
+    <h2 class="template-subtitle">We arrange and carry out residential moving tasks of any complexity</h2>
+    <div class="template-desc">
+      Moving a family to a new home or apartment, we will do it for you quickly and at the highest level of service. Our
+      customers already know that residential moving is that easy!
+    </div>
+  </div>
+
+
+  <div class="template-bg">
+    <picture>
+      <source srcset="./assets/images/template/template-2-sm.jpg" media="(max-width:500px)">
+      <img class="main-bg" src="./assets/images/template/template-2.jpg" alt="main">
+    </picture>
+  </div>
+</section>
+
+@include('./partials/shortForm.html', {title: 'We can beat any quote from a licensed mover by 5%-10%'})
+
+{{> preferences}}
+
+<section class="comp bg-footer container">
+  <h2 class="comp-title">Competence, individual and responsible approach, punctuality, fixed cost, and well-functioning
+    work scheme</h2>
+
+  <div class="comp-wrapper">
+    <div class="temp-content">
+      <h3>are indisputable arguments in favor of choosing our residential moving company and a guarantee that your
+        relocation won’t bring you losses, worries, and disappointments.</h3>
+
+      <p>
+        Our pros will cope with work of any complexity. Do not be mistaken and think that the task of the movers is only
+        to take the furniture out of the room, load it into the truck, and lift it to the floor upon arrival at the
+        destination point. Experienced NYC residential movers from our company provide a much wider range of services,
+        in fact, completely taking on all the hassle of arranging and conducting the residential move.
+
+      </p>
+
+      <h4>Contact us and get a quote when you need:</h4>
+
+      <ul>
+        <li>
+          Make sure everything is packed up and ready to go
+        </li>
+        <li>
+          Make moving residence arrangements
+        </li>
+        <li>
+          Leave the items for storage in a warehouse
+        </li>
+      </ul>
+
+      <h4>A cheap and professional residential moving NYC is real with us!</h4>
+    </div>
+  </div>
+</section>
+
+<section class="stages container">
+  <h2 class="stages-title">The entire residential moving process could be divided into <span class="text-blue">3 stages</span></h2>
+
+  <h3 class="stages-subtitle">Residential moving with ZeroMax residential moving company always means a high level of service at affordable prices!</h3>
+
+  <div class="stages-wrapper">
+
+    <div class="stages-bg-1 img-contain">
+      <img src="./assets/images/stages/stages-1.svg" alt="stages">
+    </div>
+
+    <ol class="stages-list">
+      <li>
+        <div class="stages-inner">When you hire our NYC residential movers, you get a free quote and order the residential relocation services you need. Our specialists plan, coordinate and arrive at the appointed time with all the necessary packing materials.</div>
+      </li>
+      <li>
+        <div class="stages-inner">We professionally disassemble, pack, load, transport, and unload your stuff. For the transportation of valuable belongings, we use high-quality packaging made of foamed polyethylene and other special materials that allow us to safely transport any items that are dear to you: from mirrors and crystal vases to antiques.</div>
+      </li>
+      <li>
+        <div class="stages-inner">If ordered, our residential movers NYC will lift boxes, unpack, assemble necessary items, and remove garbage.</div>
+      </li>
+    </ol>
+  
+    <div class="stages-bg-2 img-contain">
+      <img src="./assets/images/stages/stages-2.svg" alt="stages">  
+    </div>
+  </div>
+</section>
+
+<div class="short-accord mt-130 container">
+  <ul class="faq-accord custom-hover">
+    <li>
+      <button class="faq-accord-btn accordion-button" aria-label="toggle accordion">Few moving tips from experienced
+        residential moving company<span class="plus"></span></button>
+
+      <div class="accordion-block">
+        <div class="faq-accord-inner accordion-inner">
+          <p>
+            You can easily check if your movers are licensed and insured. This information should be available on
+            the movers’ website https://zeromaxmoving.com/, advertising materials and trucks. Whenever you call a
+            mover, you can ask them for their DOT and MC license numbers and then verify them with the Department
+            of Transportation and the local authority. If they are licensed, by law they have to offer limited
+            liability protection. Some movers offer additional coverage as well or can refer to agents they work
+            with if you need full coverage for your belongings. For more information you can call us at
+            (929)-295-6262.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <button class="faq-accord-btn accordion-button" aria-label="toggle accordion">ZeroMax residential movers
+        advantages<span class="plus"></span></button>
+
+      <div class="accordion-block">
+        <div class="faq-accord-inner accordion-inner">
+          <p>
+            You can easily check if your movers are licensed and insured. This information should be available on
+            the movers’ website https://zeromaxmoving.com/, advertising materials and trucks. Whenever you call a
+            mover, you can ask them for their DOT and MC license numbers and then verify them with the Department
+            of Transportation and the local authority. If they are licensed, by law they have to offer limited
+            liability protection. Some movers offer additional coverage as well or can refer to agents they work
+            with if you need full coverage for your belongings. For more information you can call us at
+            (929)-295-6262.
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+{{> ab}}
+
+{{> weWorking}}
+
+<div class="serv container">
+  <a href="#" class="serv-title">Other <br class="xl-hidden">services</a>
+
+  <ol class="serv-list">
+
+    @loop("./partials/serv.html", [
+    {"title": "Local Moving"},
+    {"title": "Commercial"},
+    {"title": "Flat fee"},
+    {"title": "Moving boxes"},
+    {"title": "Fine art moving"},
+    {"title": "Storage"},
+    {"title": "Long Distance"},
+    {"title": "Same Day Moving"},
+    ])
+
+  </ol>
+</div>
+
+<section class="we --pt-7 container">
+  {{> we}}
+</section>
+
+<div class="last-margin"></div>

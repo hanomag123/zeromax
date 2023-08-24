@@ -4,6 +4,7 @@
 
   .input {
     border-color: #566A6B;
+    color: var(--white);
     &:focus+.input-placeholder,
     &.havetext+.input-placeholder {
       background-color: var(--dblue);
