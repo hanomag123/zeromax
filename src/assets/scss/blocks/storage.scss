@@ -13,3 +13,57 @@
     }
 
 }
+
+.prepare {
+  margin-top: 12rem;
+  margin-bottom: 13rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 6rem;
+    margin-bottom: 8rem;
+  }
+}
+
+.prepare-head {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-end;
+  gap: 2rem;
+  padding-bottom: 1.8rem;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-bottom: 1rem;
+  }
+}
+.prepare-title {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 7.4rem;
+  @include breakpoint($xl-bp) {
+    font-size: 3.4rem;
+    font-weight: 400;
+    line-height: 4.2rem;
+    
+  }
+}
+.prepare-desc {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+  
+  color: #555B61;
+  padding-bottom: 1rem;
+  @include breakpoint($xl-bp) {
+    padding-bottom: 0;
+  }
+}
+
+.prepare-short {
+  .perform-list {
+    margin-left: 23.6rem;
+    grid-template-columns: repeat(10, 1fr);
+    @include breakpoint($xl-bp) {
+      margin-left: 0;
+    }
+  }
+}

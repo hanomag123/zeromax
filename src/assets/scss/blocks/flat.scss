@@ -41,12 +41,13 @@
   }
 }
 
-
-.disting-swiper {
+.mt-70 {
   margin-top: 7rem;
   @include breakpoint($xl-bp) {
     margin-top: 4rem;
   }
+}
+.disting-swiper {
   .swiper-slide {
     width: 26.4rem;
     margin-right: 2rem;

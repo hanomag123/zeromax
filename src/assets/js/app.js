@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    const revSwipers = document.querySelectorAll('.revs-swiper, .disting-swiper');
+    const revSwipers = document.querySelectorAll('.revs-swiper, .disting-swiper, .advantages-swiper');
 
     if (revSwipers.length) {
       revSwipers.forEach(el => {

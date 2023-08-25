@@ -1,0 +1,356 @@
+.best {
+  margin-top: 12rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 6rem;
+  }
+}
+
+.best-head {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+  row-gap: 8rem;
+  margin-bottom: 4rem;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.best-title {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 7.4rem;
+  
+  max-width: 57.2rem;
+  @include breakpoint($xl-bp) {
+    font-size: 3.4rem;
+    line-height: 4.2rem;
+  }
+}
+.best-desc {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+  
+  color: #555B61;
+}
+
+.best-also {
+  @include breakpoint($xl-bp) {
+    margin-top: 3rem;
+  }
+}
+
+.best-swiper {
+  .swiper-slide {
+    width: 26.4rem;
+    margin-right: 2rem;
+    border-radius: 2rem;
+    border: 0.1rem solid var(--border);
+    background-color: var(--body);
+    height: auto;
+    min-height: 30.6rem;
+    padding: 2rem;
+    padding-left: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include breakpoint($xl-bp) {
+      padding: 1.5rem 1rem 1rem 1.5rem;
+      width: 22.4rem;
+      min-height: 27rem; 
+    }
+  }
+
+  .disting-desc {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+  .disting-img {
+    width: 10rem;
+    height: 10rem;
+    margin-left: auto;
+  }
+}
+
+.mooving {
+  padding-top: 24.1rem;
+  padding-bottom: 12.6rem;
+  margin-top: -9rem;
+  @include breakpoint($xl-bp) {
+    margin-top: -4rem;
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+  }
+  .prepare-desc {
+    padding-bottom: 2.5rem;
+    @include breakpoint($xl-bp) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.weProvide {
+  padding-top: 9rem;
+  padding-bottom: 13rem;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint($xl-bp) {
+    padding-top: 0;
+    padding-bottom: 6rem;
+  }
+}
+.weProvide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96rem;
+  height: 97rem;
+  @include breakpoint($xl-bp) {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.weProvide-head {
+  @include breakpoint($xl-bp) {
+    position: relative;
+    padding-top: 36.6rem;
+    padding-bottom: 5rem;
+
+  }
+}
+.weProvide-title {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 7.4rem;
+  
+  max-width: 69rem;
+  width: 100%;
+
+  margin-left: auto;
+  position: relative;
+  margin-right: 12rem;
+  @include breakpoint($xl-bp) {
+    font-size: 3.4rem;
+    font-weight: 400;
+    line-height: 4.2rem;
+    
+  }
+}
+.weProvide-list {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3rem;
+  counter-reset: weProvide;
+
+  margin-top: 6.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 45.3rem;
+  margin-left: auto;
+  position: relative;
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin-top: 5rem;
+    gap: 2rem;
+  }
+  li {
+    counter-increment: weProvide;
+    padding-left: 12rem;
+    position: relative;
+    box-sizing: border-box;
+    @include breakpoint($xl-bp) {
+      padding-left: 5.6rem;
+    }
+    &::before {
+      content: counter(weProvide, decimal-leading-zero)'.';
+      font-family: 'Unbounded';
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.5rem;
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      @include breakpoint($xl-bp) {
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.6rem;
+        top: 0;
+        
+      }
+    }
+  }
+}
+.weProvide-info {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+  color: #DEE5E5;
+  margin-top: 7rem;
+
+  max-width: 45.3rem;
+  margin-left: auto;
+  position: relative;
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+  strong {
+    font-weight: 400;
+  }
+}
+.weProvide-subtitle {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 5rem;
+  margin-top: 18.6rem;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 135rem;
+  @include breakpoint($xl-bp) {
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    margin-top: 8rem;
+    display: inline-block;
+  }
+  & > * {
+    &:first-child {
+      margin-left: auto;
+      margin-right: 13.3rem;
+      @include breakpoint($xl-bp) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.advantages {
+  padding-top: 13rem;
+  padding-bottom: 10.6rem;
+  @include breakpoint($xl-bp) {
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.advantages-head {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-end;
+  gap: 2rem;
+  row-gap: 8rem;
+  margin-bottom: 4rem;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+}
+
+.advantages-title {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 6.2rem;
+  @include breakpoint($xl-bp) {
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+  }
+}
+
+.advantages-desc {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+  
+  color: #555B61;
+  padding-bottom: 1rem;
+}
+
+.advantages-foot {
+  margin-top: 3rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 4rem;
+  }
+}
+.advantages-button {
+  margin-left: auto;
+  width: 33.5rem;
+  max-width: 100%;
+  gap: 3rem;
+
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3rem;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 2rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    border-radius: 1.5rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    gap: 0.4rem;
+  }
+  .ball {
+    width: 3rem;
+    height: 3rem;
+    @include breakpoint($xl-bp) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+.advantages-swiper {
+  .swiper-slide {
+    width: 33.5rem;
+    margin-right: 2rem;
+    border-radius: 2rem;
+    border: 0.1rem solid var(--border);
+    background-color: var(--body);
+    height: auto;
+    min-height: 30.6rem;
+    padding: 2rem;
+    padding-left: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include breakpoint($xl-bp) {
+      padding: 1.5rem 1rem 1rem 1.5rem;
+      width: 22.4rem;
+      min-height: 27rem; 
+    }
+  }
+
+  .disting-desc {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+  .disting-img {
+    width: 10rem;
+    height: 10rem;
+    margin-left: auto;
+  }
+}

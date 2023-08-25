@@ -1169,6 +1169,12 @@ input:-webkit-autofill:active+.input-placeholder {
     padding-top: 7rem;
     padding-bottom: 37rem;
   }
+  &.--perform {
+    padding-bottom: 45.5rem;
+    @include breakpoint($xl-bp) {
+      padding-bottom: 37rem;
+    }
+  }
 }
 
 .city-title {
@@ -1184,6 +1190,21 @@ input:-webkit-autofill:active+.input-placeholder {
   @include breakpoint($xl-bp) {
     font-size: 2.6rem;
     line-height: 3.2rem;
+  }
+  &.--same {
+    max-width: 58rem;
+    .line {
+      bottom: 2rem;
+      right: -33rem;
+    }
+  }
+  &.--perform {
+    font-size: 4rem;
+    line-height: 5rem;
+    @include breakpoint($xl-bp) {
+      font-size: 2.6rem;
+      line-height: 3.2rem;
+    }
   }
   .line {
     position: absolute;
@@ -1203,10 +1224,12 @@ input:-webkit-autofill:active+.input-placeholder {
 
 .city-button {
   margin-top: 1rem;
+  width: 20rem;
   @include breakpoint($xl-bp) {
     margin-top: 8rem;
     margin-left: auto;
     padding-right: 1.5rem;
+    width: 13rem;
   }
   .line {
     position: absolute;
