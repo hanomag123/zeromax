@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return wrapper;
   }
 
-  window.addEventListener('pageshow', function(event) {
+  window.addEventListener('pageshow', function (event) {
     const inputs = document.querySelectorAll('input,textarea');
     if (inputs.length) {
       inputs.forEach(el => {
@@ -915,7 +915,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const weWorkingButton = document.querySelectorAll('.weWorking-button-sm');
 
-  function mapHandling () {
+  function mapHandling() {
     if (!event.target.closest('.hover')) {
       weWorkingButton.forEach(btn => {
         btn.classList.remove('hover');
@@ -938,6 +938,102 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   }
+
+  const switches = document.querySelectorAll('.switch input');
+
+  if (switches.length) {
+    switches.forEach(el => {
+
+      el.addEventListener('change', function () {
+        if (this.checked === true) {
+          this.parentElement.classList.add('checked');
+        }
+        if (this.checked === false) {
+          this.parentElement.classList.remove('checked');
+        }
+        const accord = this.closest('.custom-accord');
+
+        if (accord) {
+          accord.classList.toggle('checked')
+        }
+      });
+    })
+  }
+
+  setTimeout(() => {
+    const ranges = document.querySelectorAll('.slider-range')
+    if (ranges.length) {
+      ranges.forEach(el => {
+        let valueInput = [];
+        const min = el.parentElement.querySelector('.min');
+        const max = el.parentElement.querySelector('.max');
+
+        const range = new rSlider({
+          target: el,
+          values: { min: +el.dataset.min || 0, max: +el.dataset.max || 100 },
+          step: +el.dataset.step || 10,
+          scale: true,
+          labels: true,
+          tooltip: true,
+          set: el.dataset.set ? [+el.dataset.set] : [],
+          onChange: (value) => {
+            valueInput = typeof value === 'string' ? value.split(',') : [value, 100];
+            if (min) {
+              min.value = valueInput[0];
+            }
+            if (max) {
+              max.value = valueInput[1];
+            }
+          }
+        });
+
+        const inputs = el.parentElement.querySelectorAll('input');
+        const maxValue = range.conf.values[range.conf.values.length - 1] + '.00';
+        const minValue = range.conf.values[0] + '.00';
+
+        if (inputs.length) {
+          inputs.forEach(el => {
+            const regEx = new RegExp('[0-9]+', 'g');
+            el.addEventListener('keypress', (event) => {
+              if (event.keyCode == 46 || event.keyCode == 8) {
+                //do nothing
+              }
+              else {
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                  event.preventDefault();
+                }
+              }
+            })
+            el.addEventListener('input', function () {
+              const value = this.value;
+              if (!regEx.test(value)) {
+                this.value = '';
+              }
+            })
+            el.addEventListener('blur', function () {
+              if (this.value.trim() === '') {
+                if (this.classList.contains('min')) {
+                  this.value = minValue;
+                }
+                if (this.classList.contains('max')) {
+                  this.value = maxValue;
+                }
+              } else {
+                const values = range.getValue().split(',');
+                if (this.classList.contains('min')) {
+                  range.setValues(+this.value, +values[1]);
+                }
+                if (this.classList.contains('max')) {
+                  range.setValues(+values[0], +this.value);
+                }
+              }
+            })
+          })
+        }
+
+      })
+    }
+  }, 0);
 
 });
 

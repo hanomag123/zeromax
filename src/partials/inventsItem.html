@@ -1,0 +1,47 @@
+<li class="inventory-accord">
+  <button type="button" class="inventory-accord-btn accordion-button" aria-label="toggle accordion">@name</button>
+
+  <div class="accordion-block">
+    <div class="inventory-inner accordion-inner">
+      <ul class="inventory-items">
+
+        @loop('../partials/inventoryItem.html', [
+        {'name': 'Double/full size bed', 'num': '1'}, 
+        {'name': 'Queen size bed', 'num': '2'}, 
+        {'name': 'Single/twin size bed', 'num': '2'}, 
+        {'name': 'King size bed', 'num': '2'}, 
+        {'name': 'Head Board', 'num': '3'}, 
+        {'name': 'Foot Board', 'num': '4'}, 
+        {'name': 'Armoire', 'num': '5'}, 
+        {'name': 'Wardrobe cabinet', 'num': '6'}, 
+        {'name': 'Triple dresser', 'num': '7'}, 
+        {'name': 'Double dresser', 'num': '8'}, 
+        ])
+        
+
+        <li>
+          <div class="inventory-block custom-accord"> 
+
+            <div class="inventory-block-text">Double dresser</div>
+    
+            <label class="switch">
+              <div class="switch-no">No</div>
+              <input type="checkbox" name="FPS">
+              <span class="switch-box"></span>
+              <div class="switch-yes">Yes</div>
+            </label>
+          </div>
+          <div class="custom-accord-block">
+            <div class="custom-accord-inner">
+              <div class="input-wrapper">
+                <textarea name="doubledersser" class="input w-full" aria-label="message"
+                placeholder="Mention any additional items here"></textarea>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</li>

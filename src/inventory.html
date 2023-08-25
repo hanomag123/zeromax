@@ -1,0 +1,210 @@
+---
+layout: custom
+title: Inventory
+---
+
+<section class="inventory container">
+  <h1 class="inventory-title">Select the furniture you want to move</h1>
+  <div class="inventory-desc">Please select items from the list provided to get a more detailed quote.</div>
+
+  <form action="#" class="inventory-container">
+    <ul class="inventory-list">
+
+      @loop('./partials/inventsItem.html', [
+      {'name': 'Bedroom area'},
+      {'name': 'Living room area'},
+      {'name': 'Dining room and Kitchen area'},
+      {'name': 'Hallway'},
+      {'name': 'Garage'},
+      {'name': 'Basement'},
+      {'name': 'Patio / Outdoor'},
+      ])  
+
+      <li class="inventory-accord">
+        <button type="button" class="inventory-accord-btn accordion-button" aria-label="toggle accordion">Boxes and Containers</button>
+      
+        <div class="accordion-block">
+          <div class="inventory-inner accordion-inner">
+            <ul class="inventory-items"> 
+
+              <li class="inventory-item">
+                <div class="inventory-item-img img-contain">
+                  <img src="./assets/images/inventory/inventory-9.svg" alt="inventory">
+                </div>
+                <div class="inventory-item-wrap">
+                  <div class="inventory-item-name">How many boxes do you foresee having?</div>
+                </div>
+
+                <div class="range-wrapper">
+                  <div class="range-inputs" hidden>
+                    <input type="number" name="min" class="page-input min">
+                  </div>
+    
+                  <div data-step="1" data-min="0" data-max="15" class="slider-range"></div>
+                </div>
+              </li> 
+
+              <li class="inventory-item">
+                <div class="inventory-item-img --h-95 img-contain">
+                  <img src="./assets/images/inventory/inventory-10.svg" alt="inventory">
+                </div>
+                <div class="inventory-item-wrap">
+                  <div class="inventory-item-name">How many wardrobe boxeswould you need?</div>
+                  <div class="inventory-item-info">(Each can hold up 25-35 hangers)</div>
+                </div>
+
+                <div class="range-wrapper">
+                  <div class="range-inputs" hidden>
+                    <input type="number" name="min" class="page-input min">
+                  </div>
+    
+                  <div data-step="1" data-min="0" data-set="4" data-max="15" class="slider-range"></div>
+                </div>
+              </li> 
+              
+              <li>
+                <div class="inventory-block custom-accord"> 
+      
+                  <div class="inventory-block-text">Double dresser</div>
+          
+                  <label class="switch">
+                    <div class="switch-no">No</div>
+                    <input type="checkbox" name="FPS">
+                    <span class="switch-box"></span>
+                    <div class="switch-yes">Yes</div>
+                  </label>
+                </div>
+                <div class="custom-accord-block">
+                  <div class="custom-accord-inner">
+                    <div class="input-wrapper">
+                      <textarea name="doubledersser" class="input w-full" aria-label="message"
+                      placeholder="Mention any additional items here"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </li>
+      
+            </ul>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="inventory-form">
+
+      <div class="inventory-block mt-5 custom-accord">
+
+        <div class="inventory-block-text">Would you be interested in full packing service?</div>
+
+        <label class="switch">
+          <div class="switch-no">No</div>
+          <input type="checkbox" name="FPS">
+          <span class="switch-box"></span>
+          <div class="switch-yes">Yes</div>
+        </label>
+      </div>
+
+      <div class="inventory-top">
+        <div class="inventory-top-text">How did you know about us?</div>
+        <div class="custom-select w-full">
+          <select name="Typeofmove">
+            <option value="none">Where did you find us?</option>
+            <option value="Google" selected>Google</option>
+            <option value="Yelp">Yelp</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Instagram">Instagram</option>
+            <option value="123movers">123movers</option>
+            <option value="Home Advisor">Home Advisor</option>
+            <option value="Thumbtack">Thumbtack</option>
+            <option value="Tracks on the street">Tracks on the street</option>
+            <option value="Yahoo">Yahoo</option>
+            <option value="Nextdoor">Nextdoor</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inventory-wrap">
+        <h3 class="inventory-subtitle">Moving quote</h3>
+        <div class="input-container relative w-full date-container">
+          <input type="text" name="date" class="input w-full date-input" readonly required autocomplete="off">
+          <svg class="date-icon">
+            <use href='#datepickerIcon'></use>
+          </svg>
+        </div>
+      </div>
+
+      <div class="custom-select w-full" data-placeholder="Type of move">
+        <select name="Typeofmove">
+          <option value="none" selected>Type of move</option>
+          <option value="Residential">Residential</option>
+          <option value="Office">Office</option>
+          <option value="SpecialEvent">Special Event</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="inventory-wrap">
+        <h3 class="inventory-subtitle">Moving from</h3>
+        <div class="custom-select w-full" data-placeholder="Access">
+          <select name="accessfrom">
+            <option value="none" selected>Access</option>
+            <option value="1">Access 1</option>
+            <option value="2">Access 2</option>
+            <option value="3">Access 3</option>
+            <option value="4">Access 4</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="custom-select w-full" data-placeholder="Floor">
+        <select name="floorfrom">
+          <option value="none" selected>Floor</option>
+          <option value="Floor1">1</option>
+          <option value="Floor2">2</option>
+          <option value="Floor3">3</option>
+          <option value="Floor4">4</option>
+        </select>
+      </div>
+
+      <div class="inventory-wrap">
+        <h3 class="inventory-subtitle">Moving to</h3>
+        <div class="custom-select w-full" data-placeholder="Access">
+          <select name="accesto">
+            <option value="none" selected>Access</option>
+            <option value="1">Access 1</option>
+            <option value="2">Access 2</option>
+            <option value="3">Access 3</option>
+            <option value="4">Access 4</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="custom-select w-full" data-placeholder="Floor">
+        <select name="floorto">
+          <option value="none" selected>Floor</option>
+          <option value="Floor1">1</option>
+          <option value="Floor2">2</option>
+          <option value="Floor3">3</option>
+          <option value="Floor4">4</option>
+        </select>
+      </div>
+
+      <div class="input-wrapper calc-textarea --inventory">
+        <h3 class="inventory-subtitle">Do you have any additional details you would like to share with us?</h3>
+        <textarea name="message" class="input w-full" aria-label="message"
+          placeholder="Please enter pick up or delivery, day or time related notes here. You will be able to add more notes regarding your furniture in the next step. Thank you!"></textarea>
+      </div>
+
+    </div>
+
+    <button class="page-button inventory-submit" type="submit">
+      Submit the reguest <span class="small">& Let us get in touch</span>
+      <span class="ball"><svg>
+          <use href='#arrowR'></use>
+        </svg></span>
+    </button>
+  </form>
+</section>
+
+<div class="last-margin"></div>

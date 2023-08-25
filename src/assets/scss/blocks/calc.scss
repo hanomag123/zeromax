@@ -691,7 +691,10 @@
 
 .calc-textarea {
   grid-column: 2 span;
-
+  &.--inventory {
+    margin-top: 2rem;
+    width: 100%;
+  }
   textarea {
     resize: none;
     height: 16rem;
